@@ -1,0 +1,77 @@
+
+Given x ∈ ℚ:
+  ∃p,q∈ℤ ( q > 0 ∧ p = q·x ) [ℚ = ℤ/ℤ+]
+  Let a, b ∈ ℤ such that b > 0 ∧ a = b·x
+  Define P(k) ≡ k > 0 ∧ ∃j∈ℤ ( j = k·x )
+  ∃k∈ℕ ( P(k) ) ⇒ ∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) ) [well-ordering]
+  b > 0 ∧ a = b·x
+  a = b·x
+  ∃j∈ℤ ( j = b·x )
+  b > 0 ∧ ∃j∈ℤ ( j = b·x )
+  P(b)
+  ∃k∈ℕ ( P(k) )
+  ∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) )
+  Let m' ∈ ℕ such that P(m') ∧ ∀k∈ℕ ( P(k) ⇒ k≥m' )
+  P(m')
+  m' > 0 ∧ ∃j∈ℤ ( j = m'·x )
+  ∃j∈ℤ ( j = m'·x )
+  Let a' ∈ N such that a' = m'·x
+  ∀k∈ℕ ( P(k) ⇒ k≥m' )
+  Given d ∈ ℕ: 
+    If d | a' ∧ d | m':
+      Let z ∈ ℕ such that a' = d·z
+      Let z' ∈ ℕ such that m' = d·z'
+      If d ≥ 1:
+        a' = m'·x = (d·z')·x
+        d·z = (d·z')·x
+        d·z = d·(z'·x)
+        ∀ x,y,c ∈ ℚ ( c·x = c·y ∧ c > 0 ⇒ x = y ) [lemma]
+        z = z'·x
+        ∃j∈ℤ ( j = z'·x )
+        If z' = 0:
+          m' = 0
+          ⊥
+        z' > 0
+        z' > 0 ∧ ∃j∈ℤ ( j = z'·x )
+        P(z') ⇒ z' ≥ m'
+        z' ≥ m' = d·z'
+        z' ≥ d·z'
+        ∀ x,y,c ∈ ℕ ( c·x ≥ c·y ∧ c > 0 ⇒ x ≥ y ) [lemma]
+          Given x,y,c ∈ ℕ:
+            If c·x ≥ c·y ∧ c > 0:
+              If x < y:
+                c·x < c·y
+                c·y ≤ c·x < c·y
+                c·y < c·y
+                ⊥
+              x ≥ y
+          ∀ x,y,c ∈ ℕ ( c·x ≥ c·y ∧ c > 0 ⇒ x ≥ y )
+        1 ≥ d
+        d ≥ 1
+        d ≤ 1 ≤ d
+        ∀x,y∈ℕ ( x ≤ y ≤ x ⇒ x = y ) [lemma]
+          If x ≤ y ≤ x:
+            x ≤ y ∧ y ≤ x
+            If x < y:
+              x < x
+              ⊥
+              x = y
+            If x > y:
+              y < y
+              ⊥
+              x = y
+            x = y
+          ∀x,y∈ℕ ( x ≤ y ≤ x ⇒ x = y )
+        d = 1
+      If d < 1:
+        d = 0
+        m' = 0·z' = 0
+        m' > 0
+        ⊥
+        d = 1
+      d = 1
+  ∀d∈ℕ ( d | a' ∧ d | m' ⇒ d = 1 )
+  m' > 0
+  m' > 0 ∧ a' = m'·x ∧ ∀d∈ℕ ( d | a' ∧ d | m' ⇒ d = 1 )
+  ∃p,q∈ℤ ( q > 0 ∧ p = q·x ∧ ∀d∈ℕ ( d | p ∧ d | q ⇒ d = 1 ) )
+∀x∈ℚ ∃p,q∈ℤ ( q > 0 ∧ p = q·x ∧ ∀d∈ℕ ( d | p ∧ d | q ⇒ d = 1 ) )

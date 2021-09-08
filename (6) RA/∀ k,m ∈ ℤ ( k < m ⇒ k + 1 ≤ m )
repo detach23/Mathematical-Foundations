@@ -1,0 +1,40 @@
+Given k,m ∈ ℤ:  
+  If k < m:  
+    k ∈ ℕ ∨ –k ∈ ℕ   
+    m ∈ ℕ ∨ –m ∈ ℕ   
+    If k ∈ ℕ:  
+      If m ∈ ℕ:  
+        [Using an ℕ lemma] 
+        k < m ⇒ k + 1 ≤ m [lemma]  
+        k + 1 ≤ m  
+      If –m ∈ ℕ:  
+        m ≤ 0
+        0 < k < m  
+        m < m  
+        ⊥   
+        k + 1 ≤ m  
+    If –k ∈ ℕ:  
+      If m ∈ ℕ: 
+        k < m 
+        [Prove 0 < m+(−k) ∈ ℕ] 
+        k+(–k) < m+(–k) 
+        0 < m+(–k) 
+        If k+1 > m: 
+          1 > m+(–k) 
+          0 < m+(–k) < 1 
+          0 < m+(–k) 
+          1 ≤ m+(–k) [axiom]  
+          1 ≤ m+(–k) < 1 
+          1 < 1 
+          ⊥
+        k+1 ≤ m  
+      If –m ∈ ℕ: 
+        –m < –k  
+        –m < –k ⇒ –m + 1 ≤ –k [lemma]  
+        –m + 1 ≤ –k  
+        k+(–m) + 1 ≤ –k+k  
+        k+(–m) + 1 ≤ 0 
+        k+(–m) +m + 1 + ≤ m 
+        k+1 ≤ m  
+    k+1 ≤ m  
+∀ k,m ∈ ℤ ( k < m ⇒ k + 1 ≤ m )

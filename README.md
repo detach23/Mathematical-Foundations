@@ -42,8 +42,8 @@ Here we use associativity of +,· to drop brackets whenever not needed. Also, "2
 
 [Well-ordering] For any property P on ℕ, ∃k∈ℕ ( P(k) ) ⇒ ∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) ).
 
-- (PA1) ∀k∈ℕ ∃m∈ℕ ( k = m·2 ∨ k = m·2+1 ), where "2" denotes "(1+1)". 
-- (PA2) ∀k∈ℕ ( 4 | k·k ∨ 4 | k·k+3 ), where (infix) | : ℕ^2→Bool is defined via ∀x,y∈ℕ ( x | y ⇔ ∃t∈ℕ ( x·t = y ) ). 
+- [PA1] PA ⊢ ∀k∈ℕ ( ∃m∈ℕ ( k = m·2 ) ∨ ∃m∈ℕ ( k = m·2+1 ) ), where "2" denotes "(1+1)". 
+- [PA2] ∀k∈ℕ ( 4 | k·k ∨ 4 | k·k+3 ), where (infix) | : ℕ^2→Bool is defined via ∀x,y∈ℕ ( x | y ⇔ ∃t∈ℕ ( x·t = y ) ). 
 - (PA3) ∀k∈ℕ ( k > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | k ∧ ¬∃q∈ℕ ( 1 < q < p ∧ q | p ) ), where "1 < q < p" is short-hand for "1 < q ∧ q < p". 
 - (PA4) ∀k,m∈ℕ ( k·k = m·m·2 ⇒ k = 0 ). 
 - (PA5) ∀k,m∈ℕ ( m > 1 ∧ ¬∃d∈ℕ ( d > 1 ∧ d | k ∧ d | m ) ⇒ ∃x,y∈ℕ ( k·x = m·y+1 ) ).
