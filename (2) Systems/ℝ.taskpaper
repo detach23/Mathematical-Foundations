@@ -1,0 +1,25 @@
+Add the type ℝ and ℝ[≠0] = { x : x∈ℝ ∧ x≠0 }, the symbols of PA, namely the constant-symbols 0,1, the unary operation − : ℝ→ℝ, the binary operations +,·,- : ℝ^2→ℝ, the binary operation / : ℝ×ℝ[≠0] → ℝ and the 2-input predicate-symbol < (ℝ is an ordered field).
+Add the type ℝ, ℝ[≠0] = { x : x∈ℝ ∧ x≠0 }, reuse the symbols and operations of PA and add the binary operation / (ℝ is an ordered field containing ℚ).
+We can axiomatize ℕ,ℤ,ℚ,ℝ this way and it is non-trivial to actually construct ℤ,ℚ,ℝ in the base system (PA plus Set Theory) and extend the operations on ℕ to them in the manner that satisfies the axiomatizations here.
+[closure] ∀x,y∈ℝ (x+y∈ℝ). 
+[closure] ∀x,y∈ℝ (x⋅y∈ℝ). 
+[closure] ∀x,y∈ℝ (x-y∈ℝ). 
+[closure] ∀x∈ℝ ∀y∈ℝ[≠0] (x/y∈ℝ). 
+[ring] ∀x,y∈ℝ (x+y=y+x). 
+[ring] ∀x,y∈ℝ (x⋅y=y⋅x). 
+[ring] ∀x,y,z∈ℝ (x+(y+z)=(x+y)+z). 
+[ring] ∀x,y,z∈ℝ (x⋅(y⋅z)=(x⋅y)⋅z). 
+[ring] ∀x,y,z∈ℝ (x⋅(y+z)=x⋅y+x⋅z). 
+[ring] ∀x∈ℝ (x+0=x). 
+[ring] ∀x∈ℝ (x⋅1=x).
+[order] ∀x∈ℝ (¬x<x).
+[order] ∀x,y∈ℝ (x<y∨y<x∨x=y). 
+[order] ∀x,y,z∈ℝ (x<y∧y<z⇒x<z). 
+[order] ∀x,y,z∈ℝ (x<y⇒x+z<y+z). 
+[order] ∀x,y,z∈ℝ (x<y∧0<z⇒x⋅z<y⋅z). 
+[ring] ∀x∈ℝ ( x+(−x) = 0 )
+[ring] ∀x,y∈ℝ ( (x−y)+y = x )
+[order] 0<1.
+[ℚ ⊆ ℝ] ∀x∈ℚ ( x∈ℝ )
+[field] ∀x∈ℝ ∀y∈ℝ[≠0] ( x = y·(x/y) )
+[complete] ∀S⊆ℝ ( ∃u∈ℝ ∀x∈S ( x≤u ) ⇒ ∃m∈ℝ ( ∀x∈S ( x≤m ) ∧ ∀u∈ℝ ( ∀x∈S ( x≤u ) ⇒ m≤u ) ) )
