@@ -1,3 +1,5 @@
+PA ⊢ ∀k∈ℕ ∃m∈ℕ ( k = m·2 ∨ k = m·2+1 ), where "2" denotes "(1+1)"
+
 Define P(k) ≡ ∃m∈ℕ ( k = m·2 ∨ k = m·2+1 ) 
 ∀ x ∈ ℕ ( x·0 = 0 ) [lemma] 
 0 = 0·2 
