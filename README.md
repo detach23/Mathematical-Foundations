@@ -39,7 +39,6 @@ Here we use associativity of +,· to drop brackets whenever not needed. Also, "2
 ## PA (which includes induction).
 
 [Strong induction] For any property P on ℕ, ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) ).
-
 [Well-ordering] For any property P on ℕ, ∃k∈ℕ ( P(k) ) ⇒ ∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) ).
 
 - (PA1) ∀k∈ℕ ∃m∈ℕ ( k = m·2 ∨ k = m·2+1 ), where "2" denotes "(1+1)". 
