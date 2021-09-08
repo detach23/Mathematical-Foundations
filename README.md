@@ -18,7 +18,7 @@ For (Q6) to (Q10), S,T,B,G,V are types, and "f : S→T" denotes "f is a 1-input 
 - (Q9) ∀x,y,z∈G ( x*(y*z) = (x*y)*z ) ∧ ∀x,y∈G ( x*i(x) = y*i(y) ) ∧ ∀x∈G ( x*(x*i(x)) = x ) ⇒ ∀x,y∈G ( (i(y)*y)*x = x ), where (infix) * : G^2→G and i : G→G. 
 - (Q10) ∀x,y∈V ( c(x,y) ⇒ c(y,x) ) ∧ ∀x,y,z∈V ( c(x,y) ∨ c(y,z) ∨ c(z,x) ) ⇒ ∀w∈V ∃x,y,z∈V ( c(x,y) ∧ c(y,z) ∧ c(z,x) ∧ x ≠ y ∧ y ≠ z ∧ z ≠ x ) ∨ ∃v,w,x,y,z∈V ∀t∈V ( t = v ∨ t = w ∨ t = x ∨ t = y ∨ t = z ), where c : V^2→Bool.
 
-## PA− (PA without induction). 
+## PA− (PA without induction). 
 
 - (PA−1) ∀k,m∈ℕ ( k<m ⇒ k·2+1<m·2 ). 
 - (PA−2) ¬∃x,y,z∈ℕ ( 1<x<y<z<4 ). 
