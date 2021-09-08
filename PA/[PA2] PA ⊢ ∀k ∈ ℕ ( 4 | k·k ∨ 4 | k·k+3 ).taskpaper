@@ -1,0 +1,47 @@
+(PA2): 
+  ∀k ∈ ℕ ( 4 | k·k ∨ 4 | k·k+3 ), where (infix) | : ℕ^2→Bool is defined via ∀x,y∈ℕ ( x | y ⇔ ∃t∈ℕ ( x·t = y ) ).  
+  Given k ∈ ℕ: 
+    ∀k∈ℕ ∃m∈ℕ ( k = m·2 ∨ k = m·2+1 ) [PA1] 
+    ∃m∈ℕ ( k = m·2 ∨ k = m·2+1 ) 
+    Let m ∈ ℕ such that k = m·2 ∨ k = m·2+1 
+    k = m·2 ∨ k = m·2+1 
+    If k = m·2: 
+      ∃ m ∈ ℕ ( k = 2·m ) 
+      4 | k·k [Lemma 1] 
+      4 | k·k ⋁ 4 | k·k+3 
+    If k = m·2+1: 
+      ∃ m ∈ ℕ ( k = 2·m+1 ) 
+      4 | k·k+3 [Lemma 2] 
+      4 | k·k ⋁ 4 | k·k+3 
+    4 | k·k ⋁ 4 | k·k+3 
+  ∀k ∈ ℕ ( 4 | k·k ∨ 4 | k·k+3 ) 
+  Lemmas: 
+    ∀ x,y ∈ ℕ ( x = y ⇒ x·x = y·y ) [lemma] 
+      Given x ∈ ℕ: 
+        Given y ∈ ℕ: 
+          If x = y: 
+            x·x = x·x 
+            x·x = y·x 
+            x·x = y·y 
+          x = y ⇒ x·x = y·y 
+      ∀ x,y ∈ ℕ ( x = y ⇒ x·x = y·y ) 
+    (1) k is even ⇒ 4 | k·k 
+      Given k ∈ ℕ: 
+        If ∃ m ∈ ℕ ( k = 2·m ): 
+          Let m ∈ ℕ such that k = 2·m 
+          k = 2·m 
+          k·k = 4·m·m 
+          ∃ t ∈ ℕ ( 4·t = k·k ) 
+          4 | k·k 
+      ∀ k ∈ ℕ ( ∃ m ∈ ℕ ( k = 2·m ) ⇒ 4 | k·k ) 
+    (2) k is odd ⇒ 4 | k·k+3 
+      Given k ∈ ℕ: 
+        If ∃ m ∈ ℕ ( k = 2·m+1 ): 
+          Let m ∈ ℕ such that k = 2·m+1 
+          k = 2·m+1 
+          k·k = 4·m·m+4m+1 
+          k·k+3 = 4·m·m+4m+4 
+          k·k+3 = 4·(m·m+m+1) 
+          ∃ t ∈ ℕ ( 4·t = k·k+3 ) 
+          4 | k·k+3 
+      ∀ k ∈ ℕ ( ∃ m ∈ ℕ ( k = 2·m+1) ⇒ 4 | k·k+3 )
