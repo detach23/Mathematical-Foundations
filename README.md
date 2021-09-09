@@ -55,4 +55,6 @@ Useful lemmas:
 
 ## ST (Set Theory).
 
-Credit: This Natural Deduction system was created by [user21820](https://math.stackexchange.com/users/21820/user21820) from Math.Stackexchange forums.
+### Credits 
+
+This Natural Deduction system was created by [user21820](https://math.stackexchange.com/users/21820/user21820) from Math.Stackexchange forums; I organized and studied it.
