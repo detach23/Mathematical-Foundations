@@ -59,3 +59,7 @@ Useful lemmas:
 ∀ k,m ∈ ℤ ( k < m ⇒ k + 1 ≤ m )
 
 ## ST (Set Theory).
+
+**Credits**:
+
+This Natural Deduction system was created by [user21820](https://math.stackexchange.com/users/21820/user21820) from Math.Stackexchange forums; I organized and studied it.
