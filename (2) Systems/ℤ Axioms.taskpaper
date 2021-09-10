@@ -1,5 +1,4 @@
 Add the type ℤ, reuse the symbols and operations of PA, add the unary operation – and the binary operation – (ℤ is an ordered ring containing ℕ).
-We can axiomatize ℕ,ℤ,ℚ,ℝ this way and it is non-trivial to actually construct ℤ,ℚ,ℝ in the base system (PA plus Set Theory) and extend the operations on ℕ to them in the manner that satisfies the axiomatizations here.
 [closure] ∀x,y∈ℤ (x+y∈ℤ). 
 [closure] ∀x,y∈ℤ (x⋅y∈ℤ). 
 [closure] ∀x,y∈ℤ (x–y∈ℤ). 

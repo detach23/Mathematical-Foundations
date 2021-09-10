@@ -6,6 +6,7 @@ In Progress (How to Read the Contents List)
 
 ## Systems
 
+We can axiomatizise ℕ,ℤ,ℚ,ℝ this way and it is non-trivial to actually construct ℤ,ℚ,ℝ in the base system (PA plus Set Theory) and extend the operations on ℕ to them in the manner that satisfies the axiomatizations here.
 
 ## FOL
 
@@ -26,9 +27,13 @@ For (Q6) to (Q10), S,T,B,G,V are types, and "f : S→T" denotes "f is a 1-input 
 ## PA− (PA without induction). 
 
 Non-strict inequality lemmas:
+
 ∀a,b,c∈ℕ ( a ≤ b ⇒ a+c ≤ b+c )
+
 ∀a,b,c∈ℕ ( a < b ≤ c ⇒ a < c ) 
+
 ∀a,b,c∈ℕ ( a ≤ b < c ⇒ a < c ) 
+
 ∀a,b,c∈ℕ ( a ≤ b ≤ c ⇒ a ≤ c ), where "x ≤ y" is short for "x < y ∨ x = y".
 
 - (PA−1) ∀k,m∈ℕ ( k<m ⇒ k·2+1<m·2 ). 

@@ -1,1 +1,0 @@
-- "S ⊢ Q" means "S proves Q" where S is a system and Q is a sentence over that system, and that you can find the axiomatization of the systems in (2).
