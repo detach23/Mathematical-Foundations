@@ -1,31 +1,19 @@
-∀k∈ℕ ¬∃m,n∈ℕ ( 0 < k·k < m·m < n·n < k·k+3k+5 ). 
-  Given k ∈ ℕ:
-    If ∃m,n∈ℕ ( 0 < k·k < m·m < n·n < k·k+3k+5 ):
-      Let m,n ∈ ℕ such that 0 < k·k < m·m < n·n < k·k+3k+5
-      0 < k·k < m·m < n·n < k·k+3k+5
-      ∀ k, m ∈ ℕ ( k · k < m · m ⇒ k + 1 ≤ m )
-      m · m < n · n
-      m + 1 ≤ n
-      k + 1 ≤ m
-      k + 2 ≤ m + 1
-      k + 2 ≤ n
-      ( k + 2 ) · ( k + 2 ) ≤ n · n
-      ( k + 2 ) · ( k + 2 ) < k·k + 3 · k + 5
-      If k < 1:
-        0 · 0 < k · k
-        ∀ k, m ∈ ℕ ( k · k < m · m ⇒ k + 1 ≤ m )
-        0 + 1 ≤ k
-        1 ≤ k
-        ⊥ 
-      1 ≤ k
-      0 < k
-      3 < 4
-      3 < 4 ∧ 0 < k
-      3 · k < 4 · k
-      k · k + 3 · k < k · k + 4 · k
-      k · k + 3 · k + 5 < k · k + 4 · k + 5
-      k · k + 4 · k + 5 < k · k + 4 · k + 5
-      ¬ k · k + 4 · k + 5 < k · k + 4 · k + 5
-      ⊥
-    ¬ ∃m,n∈ℕ ( 0 < k·k < m·m < n·n < k·k+3k+5 )
-  ∀k∈ℕ ¬∃m,n∈ℕ ( 0 < k·k < m·m < n·n < k·k+3k+5 )
+[PA-3]
+	∀ k, m ∈ ℕ ( k·k < m·m ⇒ k+1 ≤ m ) [lemma]
+	∀ k, m ∈ ℕ ( k·k < m·m ⇒ k < m ) [lemma]
+	∀ k, m ∈ ℕ ( k < m ⇒ k+1 ≤ m ) [lemma]
+	Given k ∈ ℕ:
+		If ∃m,n∈ℕ ( 0 < k·k < m·m < n·n < k·k+3k+5 ):
+			Let a,b ∈ V such that 0 < k·k < a·a < b·b < k·k+3k+5
+			0 < k < a < b
+			k+1 ≤ a < b
+			k+2 ≤ a+1 ≤ b
+			k+2 ≤ b 
+			b·b ≥ (k+2)·(k+2) = k·k+4·k+4
+			a ≥ 1
+			4·k = 3·k+k ≥ 3·k+1
+			k·k+4·k+4 ≥ k·k+3·k+5
+			b·b ≥ k·k+3·k+5 [goal]
+			⊥
+		¬∃m,n∈ℕ ( 0 < k·k < m·m < n·n < k·k+3k+5 )
+	∀k∈ℕ ¬∃m,n∈ℕ ( 0 < k·k < m·m < n·n < k·k+3k+5 )
