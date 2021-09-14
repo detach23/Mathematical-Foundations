@@ -14,6 +14,3 @@
 			⊥
 		¬∃m,n∈ℕ ( 0 < k·k < m·m < n·n < k·k+3k+5 )
 	∀k∈ℕ ¬∃m,n∈ℕ ( 0 < k·k < m·m < n·n < k·k+3k+5 )
-	Notes:
-		And you also should chain that! b ≥ a+1 ≥ k+2.
-		You start with "k+2", which makes less sense than starting with "b". Similarly, you do "4·k = ... ≥ 3k+1", which makes no sense at all until the next line. Why are you so insistent on not presenting the inequality in a chain so that it is clear where the intermediate steps come from?
