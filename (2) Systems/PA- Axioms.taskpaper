@@ -13,6 +13,6 @@ Add the type ℕ and the symbols of PA, namely the constant-symbols 0,1 and the 
 [order] ∀x,y,z∈ℕ (x<y∧y<z⇒x<z). 
 [order] ∀x,y,z∈ℕ (x<y⇒x+z<y+z). 
 [order] ∀x,y,z∈ℕ (x<y∧0<z⇒x⋅z<y⋅z). 
-[+diff] ∀x,y∈ℕ (x<y⇒∃z∈ℕ (x+z=y)). 
+[diff] ∀x,y∈ℕ (x<y⇒∃z∈ℕ (x+z=y)). 
 [order] 0<1. 
 [discrete] ∀x∈ℕ (0=x∨1=x∨1<x)
