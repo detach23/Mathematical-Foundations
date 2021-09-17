@@ -12,7 +12,7 @@ If ∃k∈ℕ ( ∃m∈ℕ ( k = m·2 ) ∧ ∃m∈ℕ ( k = m·2+1 ) ):
 	If b < c:
 		2·b+1 < 2·c+1
 		a+1 < a+0
-		∀ x,y,z ∈ ℕ (  x+z = y+z ⇒ x = y ) [lemma]
+		∀ x,y,z ∈ ℕ(  x+z = y+z ⇒ x = y ) [lemma]
 		1 < 0
 		⊥
 	If c < b:
