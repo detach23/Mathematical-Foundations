@@ -6,10 +6,8 @@ If ∃k∈ℕ ( ∃m∈ℕ ( k = m·2 ) ∧ ∃m∈ℕ ( k = m·2+1 ) ):
 	∃m∈ℕ ( a = m·2+1 )
 	Let c ∈ ℕ such that a = c·2+1
 	If b = c:
-		2·b+1 < 2·c+1
-		a+1 < a+0
-		∀ x,y,z ∈ ℕ (  x+z = y+z ⇒ x = y ) [lemma]
-		1 < 0
+		a = c·2+1 = b·2+1 = a+1
+		0 = 1
 		⊥
 	If b < c:
 		2·b+1 < 2·c+1
