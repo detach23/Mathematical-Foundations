@@ -26,7 +26,7 @@ For (Q6) to (Q10), S,T,B,G,V are types, and "f : S→T" denotes "f is a 1-input 
 
 ## PA− (PA without induction). 
 
-Non-strict inequality lemmas:
+**Non-strict inequality lemmas**:
 
 ∀a,b,c∈ℕ ( a ≤ b ⇒ a+c ≤ b+c )
 
@@ -36,11 +36,12 @@ Non-strict inequality lemmas:
 
 ∀a,b,c∈ℕ ( a ≤ b ≤ c ⇒ a ≤ c ), where "x ≤ y" is short for "x < y ∨ x = y".
 
+Here we use associativity of +,· to drop brackets whenever not needed. Also, "2" means "1+1" and "4" means "1+1+1+1", and you should omit all steps involving just plain algebra; there is no need to give a proof of things like "(k+1)·(k+1) = k·k+k·2+1".
+
 - [PA−1] ∀k,m∈ℕ ( k<m ⇒ k·2+1<m·2 ). 
 - [PA−2] ¬∃x,y,z∈ℕ ( 1<x<y<z<4 ). 
 - [PA−3] ∀k∈ℕ ¬∃m,n∈ℕ ( 0 < k·k < m·m < n·n < k·k+3k+5 ). 
 - [PA−4] PA− ⊢ No natural is both even and odd.
-Here we use associativity of +,· to drop brackets whenever not needed. Also, "2" means "1+1" and "4" means "1+1+1+1", and you should omit all steps involving just plain algebra; there is no need to give a proof of things like "(k+1)·(k+1) = k·k+k·2+1".
 
 ## PA (which includes induction).
 
