@@ -1,1 +1,29 @@
-[PA−4] PA− ⊢ ¬∃k∈ℕ ( ∃m∈ℕ ( k = m·2 ) ∧ ∃m∈ℕ ( k = m·2+1 ) ).
+PA− ⊢ ¬∃k∈ℕ ( ∃m∈ℕ ( k = m·2 ) ∧ ∃m∈ℕ ( k = m·2+1 ) ).
+If ∃k∈ℕ ( ∃m∈ℕ ( k = m·2 ) ∧ ∃m∈ℕ ( k = m·2+1 ) ):
+	Let a ∈ ℕ such that ∃m∈ℕ ( a = m·2 ) ∧ ∃m∈ℕ ( a = m·2+1 )
+	∃m∈ℕ ( a = m·2 ) 
+	Let b ∈ ℕ such that a = b·2
+	∃m∈ℕ ( a = m·2+1 )
+	Let c ∈ ℕ such that a = c·2+1
+	If b = c:
+		2·b+1 < 2·c+1
+		a+1 < a+0
+		∀ x,y,z ∈ ℕ (  x+z = y+z ⇒ x = y ) [lemma]
+		1 < 0
+		⊥
+	If b < c:
+		2·b+1 < 2·c+1
+		a+1 < a+0
+		∀ x,y,z ∈ ℕ (  x+z = y+z ⇒ x = y ) [lemma]
+		1 < 0
+		⊥
+	If c < b:
+		Let z ∈ ℕ such that c+z = b
+		2·(c+z) = 2·b
+		2·c+2·z = 2·b
+		2·c+2·z+1 = 2·b+1
+		a+2·z = a+1 
+		2·z = 1
+		⊥
+	⊥
+¬∃k∈ℕ ( ∃m∈ℕ ( k = m·2 ) ∧ ∃m∈ℕ ( k = m·2+1 ) )
