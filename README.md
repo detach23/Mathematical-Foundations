@@ -66,4 +66,4 @@ Useful lemmas:
 
 **Credits**:
 
-This Natural Deduction system was created by [user21820](https://math.stackexchange.com/users/21820/user21820) from Math.Stackexchange forums; I organized and studied it.
+This Natural Deduction system was created by [user21820](https://math.stackexchange.com/users/21820/user21820) from Math.Stackexchange forums; I organized and studied it. The original post is: [Predicate Logic: ](Predicate logic: How do you self-check the logical structure of your own arguments?)
