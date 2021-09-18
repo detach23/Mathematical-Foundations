@@ -2,7 +2,8 @@
 
 ## Introduction
 
-In Progress (How to Read the Contents List)
+Truth tables are not enough to capture first-order logic (with quantifiers), so we use inference rules instead. Each inference rule is chosen to be sound, meaning that if you start with true statements and use the rule you will deduce only true statements. We say that these rules are truth-preserving. If you choose carefully enough, you can make it so that the rules are not just truth-preserving but also allow you to deduce every (well-formed) statement that is necessarily true (in all situations).
+What you are probably looking for (namely a practical way to rigorously check the logical validity of your arguments) is natural deduction. There are many different styles, the most intuitive type being Fitch-style, which mark subcontexts using indentation or some related visual demarcation. The following system uses indentation and follows the intuition most closely in my opinion. 
 
 ## Systems
 
