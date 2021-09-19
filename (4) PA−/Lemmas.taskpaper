@@ -8,6 +8,7 @@ Contents:
 	∀x,y,z∈ℕ ( x ≤ y ⇒ x + z ≤ y + z ) [lemma]
 	∀ x, y, z ∈ ℕ ( x ≤ y ⇒ x · z ≤ y · z ) [lemma]
 	∀x,y∈ℕ ( x≤y ⇒ ∃z∈ℕ ( x+z = y ) ) [lemma]
+	
 ∀ x, y, z ∈ ℕ ( x + y = x + z ⇒ y = z ) [lemma]
 	Given x ∈ ℕ:
 		Given y ∈ ℕ:
