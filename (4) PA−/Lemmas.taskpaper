@@ -2,7 +2,6 @@ Contents:
 	∀ x, y, z ∈ ℕ ( x + y = x + z ⇒ y = z ) [lemma]
 	∀ x ∈ ℕ ( x·0 = 0 ) [lemma]
 	∀x,y∈ℕ ( x≤y ⇒ ∃z∈ℕ ( x+z = y ) ) [lemma]
-	∀ k, m ∈ ℕ ( k·k < m·m ⇒ k+1 ≤ m ) [lemma]
 	∀x,y,z∈ℕ ( x<y≤z ⇒ x<z ) [lemma]
 	∀x,y,z∈ℕ ( x≤y<z ⇒ x<z ) [lemma]
 	∀x,y,z∈ℕ ( x ≤ y ⇒ x + z ≤ y + z ) [lemma]
@@ -56,25 +55,6 @@ Contents:
 				∃z∈ℕ ( x+z = y )
 			∃z∈ℕ ( x+z = y )
 	∀x,y∈ℕ ( x≤y ⇒ ∃z∈ℕ ( x+z = y ) )
-∀ k, m ∈ ℕ ( k·k < m·m ⇒ k+1 ≤ m ) [lemma]
-	Given k ∈ ℕ:
-		Given m ∈ ℕ:
-			If k · k < m · m
-				If ¬ (k < m):
-					k ≥ m
-					m ≤ k
-					m · m ≤ k · m
-					m · k ≤ k · k
-					m · m ≤ k · k
-					∀x,y,z∈ℕ ( x<y≤z ⇒ x<z )
-					k · k < k · k
-					¬ k · k < k · k
-					⊥ 
-				k < m
-				∀ k,m ∈ ℕ ( k < m ⇒ k + 1 ≤ m )
-				k + 1 ≤ m
-			k·k < m·m ⇒ k+1 ≤ m
-	∀ k, m ∈ ℕ ( k·k < m·m ⇒ k+1 ≤ m )
 ∀x,y,z∈ℕ ( x<y≤z ⇒ x<z ) [lemma]
 ∀x,y,z∈ℕ ( x≤y<z ⇒ x<z ) [lemma]
 ∀x,y,z∈ℕ ( x ≤ y ⇒ x + z ≤ y + z ) [lemma]
