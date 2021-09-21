@@ -47,6 +47,8 @@ Here we use associativity of +,· to drop brackets whenever not needed. Also, "2
 
 ## PA (which includes induction).
 
+[Induction] For any property P on ℕ, P(0) ∧ ∀ k ∈ ℕ ( P(k) ⇒ P(k+1) ) ⇒ ∀ k ∈ ℕ ( P(k) )
+
 [Strong induction] For any property P on ℕ, ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) ).
 
 [Well-ordering] For any property P on ℕ, ∃k∈ℕ ( P(k) ) ⇒ ∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) ).
