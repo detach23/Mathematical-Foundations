@@ -1,16 +1,22 @@
-Precedence rules:
-	The standard precedence rules are (highest to lowest): [infix operations],[relations including =],¬,∧,∨,{⇒,⇔}
-	
-**Syntax**:
-	Syntax rules:
-		Notation:
-			( Given x∈S ⊢ A : bool ) ⊢ ∀x∈S ( A ) : bool
-			Which means:
-			| Given x∈S:
-			|   A : bool.
-			|−−−−−−−−−−−−−−−−−−−−
-			| ∀x∈S ( A ) : bool.
-			
+## Precedence rules:
+​	The standard precedence rules are (highest to lowest): [infix operations],[relations including =],¬,∧,∨,{⇒,⇔}
+​	
+## Syntax
+### Syntax rules
+
+Notation:
+
+```
+( Given x∈S ⊢ A : bool ) ⊢ ∀x∈S ( A ) : bool
+Which means:
+| Given x∈S:
+|   A : bool.
+|−−−−−−−−−−−−−−−−−−−−
+| ∀x∈S ( A ) : bool.
+```
+
+​			
+
 			Note that we use a colon after each header and the full-stop after each statement, because we would want to allow breaking up a statement over multiple lines without ambiguity.
 		Now to define what (boolean) statements are valid in a given context.
 		To make things easier I shall write "A,...,B : bool" to mean "A,...,B are boolean statements".
