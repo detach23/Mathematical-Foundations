@@ -1,6 +1,6 @@
 ## Precedence rules:
-​	The standard precedence rules are (highest to lowest): [infix operations],[relations including =],¬,∧,∨,{⇒,⇔}
-​	
+- The standard precedence rules are (highest to lowest): [infix operations],[relations including =],¬,∧,∨,{⇒,⇔}
+
 ## Syntax
 ### Syntax rules
 
@@ -15,74 +15,112 @@ Which means:
 | ∀x∈S ( A ) : bool.
 ```
 
-​			
 
-			Note that we use a colon after each header and the full-stop after each statement, because we would want to allow breaking up a statement over multiple lines without ambiguity.
-		Now to define what (boolean) statements are valid in a given context.
-		To make things easier I shall write "A,...,B : bool" to mean "A,...,B are boolean statements".
-		In any context, we have the following syntax rules:
-		A : bool ⊢ ¬A : bool 
-		A,B : bool ⊢ A∧B : bool 
-		A,B : bool ⊢ A∨B : bool 
-		A,B : bool ⊢ A⇒B : bool 
-		A,B : bool ⊢ A⇔B : bool
-		( Given x∈S ⊢ A : bool ) ⊢ ∀x∈S ( A ) : bool 
-		( Given x∈S ⊢ A : bool ) ⊢ ∃x∈S ( A ) : bool
-		[v is a used variable] ⊢ v : term 
-		t[1],...,t[k] : term ; [f is a k-input function-symbol] ⊢ f(t[1],...,t[k]) : term 
-		t[1],...,t[k] : term ; [Q is a k-input predicate-symbol] ⊢ Q(t[1],...,t[k]) : bool
-		Here a rule of the form "... ⊢ ..." means from the left-hand stuff you can deduce the right-hand stuff (in the current context), and if you have "( ... ⊢ ... )" in the left-hand stuff it means that you have deduced that kind of subcontext previously. For example we can literally do the following deduction if Q is a 1-input predicate symbol:
-		Given x∈S:
-			Q(x) : bool
-		∀x∈S ( Q(x) ) : bool
-		All these deductions should never be written out explicitly, but it should be how you think of the syntax rules if you want to be precise. Note that the ∀sub rule ensures you cannot have nested quantification of the same variable. For example you cannot do:
-		Given x∈S:
-		Given x∈T:  [forbidden!]
-			Q(x) : bool
-		∃x∈T ( Q(x) ) : bool
-		∀x∈S ( ∃x∈T ( Q(x) ) ) : bool
-		I've also included the recursive definition of terms in the above rules, just to let you see how one can think of them. For instance, if we have the binary operation + we can actually do the following deduction:
-		Given x,y,z∈ℕ:
+
+*Note: we use a colon after each header and the full-stop after each statement, because we would want to allow breaking up a statement over multiple lines without ambiguity.*
+
+Now to define what (boolean) statements are valid in a given context.
+To make things easier I shall write "A,...,B : bool" to mean "A,...,B are boolean statements".
+In any context, we have the following syntax rules:
+
+```
+A : bool ⊢ ¬A : bool 
+A,B : bool ⊢ A∧B : bool 
+A,B : bool ⊢ A∨B : bool 
+A,B : bool ⊢ A⇒B : bool 
+A,B : bool ⊢ A⇔B : bool
+( Given x∈S ⊢ A : bool ) ⊢ ∀x∈S ( A ) : bool 
+( Given x∈S ⊢ A : bool ) ⊢ ∃x∈S ( A ) : bool
+[v is a used variable] ⊢ v : term 
+t[1],...,t[k] : term ; [f is a k-input function-symbol] ⊢ f(t[1],...,t[k]) : term 
+t[1],...,t[k] : term ; [Q is a k-input predicate-symbol] ⊢ Q(t[1],...,t[k]) : bool
+```
+
+Here a rule of the form "... ⊢ ..." means from the left-hand stuff you can deduce the right-hand stuff (in the current context), and if you have "( ... ⊢ ... )" in the left-hand stuff it means that you have deduced that kind of subcontext previously. For example we can literally do the following deduction if Q is a 1-input predicate symbol:
+	
+
+```
+Given x∈S:
+		Q(x) : bool
+	∀x∈S ( Q(x) ) : bool
+```
+
+​	
+
+All these deductions should never be written out explicitly, but it should be how you think of the syntax rules if you want to be precise. Note that the ∀sub rule ensures you cannot have nested quantification of the same variable. For example you cannot do:
+
+```
+	Given x∈S:
+	Given x∈T:  [forbidden!]
+		Q(x) : bool
+	∃x∈T ( Q(x) ) : bool
+	∀x∈S ( ∃x∈T ( Q(x) ) ) : bool
+```
+
+I've also included the recursive definition of terms in the above rules, just to let you see how one can think of them. For instance, if we have the binary operation + we can actually do the following deduction:
+	
+
+```
+Given x,y,z∈ℕ:
 		x,y,z : term
 		x+y : term
 		(x+y)+z : term
-		Of course, please don't concern yourself now with the actual syntax of binary operations, whether infix or prefix. We do not want to have to write "+(+(x,y),z)" just to make it fit the above rules completely!
-		Just understand the structural idea.
-		The above rules suffice for plain FOL. For my version of many-sorted FOL, we just need one more:
-		( Given x∈S ⊢ x∈S : bool ).
-		You also need syntax rules for equality:
-		t,u : term ⊢ t=u : bool
-	Syntax properties:
-		Given x,y,z∈S:
-			y : term  [since x is a used variable]
-			? : ?term
-			? = y : ?bool
-		Here "?term" is used to indicate that it is a term that may have blanks, and same for "?bool". The rules for "?term" and "?bool" are identical to the rules for sentences except that you change every ": term" and every ": bool" to ": ?term" and ": ?bool" respectively, and you add:
-		? : ?term
-		Then a property is exactly all those things that you can deduce in front of ": ?bool".
-	Example 1:
-		Given x∈S:
-			Given x∈T:  [forbidden!]
-				Q(x) : bool
-			∃x∈T ( Q(x) ) : bool
-		∀x∈S ( ∃x∈T ( Q(x) ) ) : bool
-	Example 2:
-		Given k∈ℕ:
-			?,k : ?term
-			? > k : ?bool
-			Given d,x∈ℕ:
-				1,d,? : ?term
-				d·x : ?term
-				1 < d , d < ? , ? = d·x : ?bool
-				1 < d < ? ∧ ? = d·x : ?bool
-			∃d,x∈ℕ ( 1 < d < ? ∧ ? = d·x ) : ?bool
-			¬∃d,x∈ℕ ( 1 < d < ? ∧ ? = d·x ) : ?bool
-			? > k ∧ ¬∃d,x∈ℕ ( 1 < d < ? ∧ ? = d·x ) : ?bool
-	Useful short-forms:
-		"Given x∈S such that Q(x):", expands to:
-		Given x∈S:
-			If Q(x):
-				...
+```
+
+Of course, please don't concern yourself now with the actual syntax of binary operations, whether infix or prefix. We do not want to have to write "+(+(x,y),z)" just to make it fit the above rules completely!
+Just understand the structural idea.
+The above rules suffice for plain FOL. For my version of many-sorted FOL, we just need one more:
+( Given x∈S ⊢ x∈S : bool ).
+You also need syntax rules for equality:
+t,u : term ⊢ t=u : bool
+
+## Syntax properties
+
+```
+Given x,y,z∈S:
+	y : term  [since x is a used variable]
+	? : ?term
+	? = y : ?bool	
+```
+
+*Here "?term" is used to indicate that it is a term that may have blanks, and same for "?bool". The rules for "?term" and "?bool" are identical to the rules for sentences except that you change every ": term" and every ": bool" to ": ?term" and ": ?bool" respectively, and you add:*
+	? : ?term
+Then a property is exactly all those things that you can deduce in front of ": ?bool".
+
+```
+Example 1:
+	Given x∈S:
+		Given x∈T:  [forbidden!]
+			Q(x) : bool
+		∃x∈T ( Q(x) ) : bool
+	∀x∈S ( ∃x∈T ( Q(x) ) ) : bool
+```
+
+```
+Example 2:
+	Given k∈ℕ:
+		?,k : ?term
+		? > k : ?bool
+		Given d,x∈ℕ:
+			1,d,? : ?term
+			d·x : ?term
+			1 < d , d < ? , ? = d·x : ?bool
+			1 < d < ? ∧ ? = d·x : ?bool
+		∃d,x∈ℕ ( 1 < d < ? ∧ ? = d·x ) : ?bool
+		¬∃d,x∈ℕ ( 1 < d < ? ∧ ? = d·x ) : ?bool
+		? > k ∧ ¬∃d,x∈ℕ ( 1 < d < ? ∧ ? = d·x ) : ?bool
+```
+
+**Useful short-forms**
+	
+
+```
+"Given x∈S such that Q(x):", expands to:
+	Given x∈S:
+		If Q(x):
+			...
+```
+
 **Axioms**:
 	The axioms I have given you for ℚ minus "∀x∈ℚ ∃p,q∈ℤ ( q ≠ 0 ∧ p = q·x )" are the axioms for ordered fields that contain ℤ. (And every ordered field contains a copy of ℤ, but you don't need to care about that now.) Both ℚ and ℝ are ordered fields that contain ℤ, so they both satisfy every theorem you can prove from the ordered field axioms.
 	Notice that the (dedekind-)completeness axiom is the only axiom that goes beyond the structures involved. The others are all about ℕ,ℤ,ℚ,ℝ, so what you can prove from them don't involve set theory, since you can treat ℕ,ℤ,ℚ,ℝ as mere types. However, the completeness axiom involves set theory because it is useless without any axioms that allow you to prove existence of members of P(ℝ).

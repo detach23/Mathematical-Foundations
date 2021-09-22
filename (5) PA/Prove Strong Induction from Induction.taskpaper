@@ -1,20 +1,31 @@
 [Induction] For any property P on ℕ, P(0) ∧ ∀ k ∈ ℕ ( P(k) ⇒ P(k+1) ) ⇒ ∀ k ∈ ℕ ( P(k) )
 [Strong induction] For any property P on ℕ, ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) ).
 [Well-ordering] For any property P on ℕ, ∃k∈ℕ ( P(k) ) ⇒ ∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) ).
-If for any property P on ℕ, P(0) ∧ ∀ k ∈ ℕ ( P(k) ⇒ P(k+1) ) ⇒ ∀ k ∈ ℕ ( P(k) ): [Induction]
-	Given property P on ℕ:
-		If ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ):
-			∀i∈ℕ ( i<0 ⇒ P(i) ) ⇒ P(0)
-			Given i ∈ ℕ such that i < 0:
-				⊥
-				P(i)
-			∀i∈ℕ ( i<0 ⇒ P(i) ) 
-			P(0)
-			Given k ∈ ℕ:
-				If P(k):
-					...
-					P(k+1)
-			∀ k ∈ ℕ ( P(k) ⇒ P(k+1) ) 
-			∀k∈ℕ ( P(k) ).
-		∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) ).
-	For any property P on ℕ, ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) ). [Strong induction]
+For any property P on ℕ, we can prove:
+	P(0) ∧ ∀ k ∈ ℕ ( P(k) ⇒ P(k+1) ) ⇒ ∀ k ∈ ℕ ( P(k) )
+	If ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ):
+		∀i∈ℕ ( i<0 ⇒ P(i) ) ⇒ P(0)
+		Given i ∈ ℕ such that i < 0:
+			⊥
+			P(i)
+		∀i∈ℕ ( i<0 ⇒ P(i) ) 
+		P(0)
+		Given k ∈ ℕ:
+			If P(k):
+				k+1 ∈ ℕ
+				∀i∈ℕ ( i<k+1 ⇒ P(i) ) ⇒ P(k+1) 
+				Given i ∈ ℕ:
+					If i < k+1:
+						i+1 ≤ k+1
+						i ≤ k
+						If i = k:
+							P(i)
+						If i < k:
+							If ¬P(i):
+								...
+						P(i)
+				∀i∈ℕ ( i<k+1 ⇒ P(i) ) 
+				P(k+1)
+		∀k∈ℕ ( P(k) ).
+	∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) ).
+For any property P on ℕ, ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) ). [Strong induction]
