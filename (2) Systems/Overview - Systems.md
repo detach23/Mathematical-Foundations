@@ -15,8 +15,6 @@ Which means:
 | ∀x∈S ( A ) : bool.
 ```
 
-
-
 *Note: we use a colon after each header and the full-stop after each statement, because we would want to allow breaking up a statement over multiple lines without ambiguity.*
 
 Now to define what (boolean) statements are valid in a given context.
@@ -37,15 +35,12 @@ t[1],...,t[k] : term ; [Q is a k-input predicate-symbol] ⊢ Q(t[1],...,t[k]) : 
 ```
 
 Here a rule of the form "... ⊢ ..." means from the left-hand stuff you can deduce the right-hand stuff (in the current context), and if you have "( ... ⊢ ... )" in the left-hand stuff it means that you have deduced that kind of subcontext previously. For example we can literally do the following deduction if Q is a 1-input predicate symbol:
-	
 
 ```
 Given x∈S:
 		Q(x) : bool
 	∀x∈S ( Q(x) ) : bool
 ```
-
-​	
 
 All these deductions should never be written out explicitly, but it should be how you think of the syntax rules if you want to be precise. Note that the ∀sub rule ensures you cannot have nested quantification of the same variable. For example you cannot do:
 
