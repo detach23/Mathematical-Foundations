@@ -83,7 +83,7 @@ Given x,y,z∈S:
 	? = y : ?bool	
 ```
 
-*Here "?term" is used to indicate that it is a term that may have blanks, and same for "?bool". The rules for "?term" and "?bool" are identical to the rules for sentences except that you change every ": term" and every ": bool" to ": ?term" and ": ?bool" respectively, and you add:*
+Here "?term" is used to indicate that it is a term that may have blanks, and same for "?bool". The rules for "?term" and "?bool" are identical to the rules for sentences except that you change every ": term" and every ": bool" to ": ?term" and ": ?bool" respectively, and you add:*
 	? : ?term
 Then a property is exactly all those things that you can deduce in front of ": ?bool".
 
@@ -123,10 +123,10 @@ Example 2:
 
 ## Axioms
 
-​	The axioms I have given you for ℚ minus "∀x∈ℚ ∃p,q∈ℤ ( q ≠ 0 ∧ p = q·x )" are the axioms for ordered fields that contain ℤ. (And every ordered field contains a copy of ℤ, but you don't need to care about that now.) Both ℚ and ℝ are ordered fields that contain ℤ, so they both satisfy every theorem you can prove from the ordered field axioms.
-​	Notice that the (dedekind-)completeness axiom is the only axiom that goes beyond the structures involved. The others are all about ℕ,ℤ,ℚ,ℝ, so what you can prove from them don't involve set theory, since you can treat ℕ,ℤ,ℚ,ℝ as mere types. However, the completeness axiom involves set theory because it is useless without any axioms that allow you to prove existence of members of P(ℝ).
-​	It's really up to you how descriptive you want your labels to be. I hope you recognize most of these labels. Long forms include "irreflexive" and "trichotomy" and "transitivity". And "+ over <" intuitively stands for "when + 'distributes' over <".
-​	
+The axioms I have given you for ℚ minus "∀x∈ℚ ∃p,q∈ℤ ( q ≠ 0 ∧ p = q·x )" are the axioms for ordered fields that contain ℤ. (And every ordered field contains a copy of ℤ, but you don't need to care about that now.) Both ℚ and ℝ are ordered fields that contain ℤ, so they both satisfy every theorem you can prove from the ordered field axioms.
+Notice that the (dedekind-)completeness axiom is the only axiom that goes beyond the structures involved. The others are all about ℕ,ℤ,ℚ,ℝ, so what you can prove from them don't involve set theory, since you can treat ℕ,ℤ,ℚ,ℝ as mere types. However, the completeness axiom involves set theory because it is useless without any axioms that allow you to prove existence of members of P(ℝ).
+It's really up to you how descriptive you want your labels to be. I hope you recognize most of these labels. Long forms include "irreflexive" and "trichotomy" and "transitivity". And "+ over <" intuitively stands for "when + 'distributes' over <".
+	
 
 Division axiom
 
@@ -158,20 +158,20 @@ Semiring axioms:
 	- ident rules
 	- [+diff]
 	- [0<1]. 
-Ordered semiring axioms:
-	add the axioms governing <. 
-Discrete ordered semiring axioms:
-	add [discrete].
-Ring axioms:
-	the semiring axioms but with [+diff] replaced by existence of additive inverse. All you need technically is the negation operation, but for convenience we added both subtraction and negation. So to get the ring axioms you start from the semiring axioms and replace [+diff] by the axioms governing −. 
-Ordered ring axioms:
-	add the axioms governing <. 
-Ordered field axioms:
-	add the axioms governing "/".
-ℚ and ℝ are ordered fields (i.e. they satisfy the ordered field axioms).
-Triage:
-Note that the "⊢" used in a rule means something slightly different from when used to state theorems.
-There is no ambiguity because for theorem statements "S ⊢ Q" has a system S, whereas for rules "X;...;Y ⊢ Z;...;W" the stuff on the left are either statements or conditions or proof structure.
-Symbol-defining rule:
-	For many-sorted FOL, you can define a restricted function-symbol (i.e. with specified input/output types):
+		Ordered semiring axioms:
+		add the axioms governing <. 
+		Discrete ordered semiring axioms:
+		add [discrete].
+		Ring axioms:
+		the semiring axioms but with [+diff] replaced by existence of additive inverse. All you need technically is the negation operation, but for convenience we added both subtraction and negation. So to get the ring axioms you start from the semiring axioms and replace [+diff] by the axioms governing −. 
+		Ordered ring axioms:
+		add the axioms governing <. 
+		Ordered field axioms:
+		add the axioms governing "/".
+		ℚ and ℝ are ordered fields (i.e. they satisfy the ordered field axioms).
+		Triage:
+		Note that the "⊢" used in a rule means something slightly different from when used to state theorems.
+		There is no ambiguity because for theorem statements "S ⊢ Q" has a system S, whereas for rules "X;...;Y ⊢ Z;...;W" the stuff on the left are either statements or conditions or proof structure.
+		Symbol-defining rule:
+		For many-sorted FOL, you can define a restricted function-symbol (i.e. with specified input/output types):
 		∀x[1]∈S[1] ... ∀x[k]∈S[k] ∃!y∈T ( Q(x[1],...,x[k],y) ) ⊢ ∀x[1]∈S[1] ... ∀x[k]∈S[k] ∀y∈T ( f(x[1],...,x[k]) = y ⇔ Q(x[1],...,x[k],y) ). [where f is a fresh function-symbol]
