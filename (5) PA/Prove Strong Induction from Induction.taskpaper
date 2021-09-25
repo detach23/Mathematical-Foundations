@@ -11,7 +11,7 @@ For any property P on ℕ, we can prove:
 	∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) ).
 For any property P on ℕ, ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) ). [Strong induction]
 Notes:
-	you try to convince yourself that ∀k∈ℕ ( P(k) ) is true given ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ).
+	Convince yourself that ∀k∈ℕ ( P(k) ) is true given ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ).
 	P(0) 
 	P(1) from P(0) ⇒ P(1) 
 	P(2) from P(0) ∧ P(1) ⇒ P(2) 
