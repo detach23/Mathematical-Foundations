@@ -4,28 +4,18 @@
 For any property P on ℕ, we can prove:
 	P(0) ∧ ∀ k ∈ ℕ ( P(k) ⇒ P(k+1) ) ⇒ ∀ k ∈ ℕ ( P(k) )
 	If ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ):
-		∀i∈ℕ ( i<0 ⇒ P(i) ) ⇒ P(0)
-		Given i ∈ ℕ such that i < 0:
-			⊥
-			P(i)
-		∀i∈ℕ ( i<0 ⇒ P(i) ) 
-		P(0)
 		Given k ∈ ℕ:
-			If P(k):
-				k+1 ∈ ℕ
-				∀i∈ℕ ( i<k+1 ⇒ P(i) ) ⇒ P(k+1) 
-				Given i ∈ ℕ:
-					If i < k+1:
-						i+1 ≤ k+1
-						i ≤ k
-						If i = k:
-							P(i)
-						If i < k:
-							If ¬P(i):
-								...
-						P(i)
-				∀i∈ℕ ( i<k+1 ⇒ P(i) ) 
-				P(k+1)
+			∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k)
+			...
 		∀k∈ℕ ( P(k) ).
 	∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) ).
 For any property P on ℕ, ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) ). [Strong induction]
+Notes:
+	you try to convince yourself that ∀k∈ℕ ( P(k) ) is true given ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ).
+	P(0) 
+	P(1) from P(0) ⇒ P(1) 
+	P(2) from P(0) ∧ P(1) ⇒ P(2) 
+	P(3) from P(0) ∧ P(1) ∧ P(2) ⇒ P(3) 
+	P(4) from P(0) ∧ P(1) ∧ P(2) ∧ P(3) ⇒ P(4)
+	
+	I get P(0). Then, from P(0) and P(0) ⇒ P(1) I get P(1). So, from P(0) ∧ P(1) and P(0) ∧ P(1) ⇒ P(2), I get P(2). From P(0) ∧ P(1) ∧ P(2) and P(0) ∧ P(1) ∧ P(2) ⇒ P(3), I get P(3). And from P(0) ∧ P(1) ∧ P(2) ∧ P(3) and P(0) ∧ P(1) ∧ P(2) ∧ P(3) ⇒ P(4), I get P(4).
