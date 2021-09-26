@@ -66,14 +66,6 @@ Given x,y,z ∈ ℕ:
 			(x+y)+z : term
 ```
 
-Of course, please don't concern yourself now with the actual syntax of binary operations, whether infix or prefix. We do not want to have to write "+(+(x,y),z)" just to make it fit the above rules completely!
-Just understand the structural idea.
-
-[[The above rules suffice for plain FOL. For my version of many-sorted FOL, we just need one more:
-( Given x∈S ⊢ x∈S : bool ).
-You also need syntax rules for equality:
-t,u : term ⊢ t=u : bool]]
-
 
 ## Syntax properties
 
