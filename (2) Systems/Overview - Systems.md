@@ -82,17 +82,7 @@ Here "?term" is used to indicate that it is a term that may have blanks, and sam
 	? : ?term
 Then a property is exactly all those things that you can deduce in front of ": ?bool".
 
-**Example 1**
-
-```
-Given x∈S:
-	Given x∈T:  [forbidden!]
-		Q(x) : bool
-	∃x∈T ( Q(x) ) : bool
-∀x∈S ( ∃x∈T ( Q(x) ) ) : bool
-```
-
-**Example 2**
+**Example**
 
 ```
 
