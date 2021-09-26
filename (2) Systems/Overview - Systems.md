@@ -46,9 +46,9 @@ All these deductions should never be written out explicitly, but it should be ho
 
 ```
 	Given x∈S:
-	Given x∈T:  [forbidden!]
-		Q(x) : bool
-	∃x∈T ( Q(x) ) : bool
+		Given x∈T:  [forbidden!]
+			Q(x) : bool
+			∃x∈T ( Q(x) ) : bool
 	∀x∈S ( ∃x∈T ( Q(x) ) ) : bool
 ```
 
@@ -82,28 +82,31 @@ Here "?term" is used to indicate that it is a term that may have blanks, and sam
 	? : ?term
 Then a property is exactly all those things that you can deduce in front of ": ?bool".
 
-```
-Example 1:
-	Given x∈S:
-		Given x∈T:  [forbidden!]
-			Q(x) : bool
-		∃x∈T ( Q(x) ) : bool
-	∀x∈S ( ∃x∈T ( Q(x) ) ) : bool
-```
+**Example 1**
 
 ```
-Example 2:
-	Given k∈ℕ:
-		?,k : ?term
-		? > k : ?bool
-		Given d,x∈ℕ:
-			1,d,? : ?term
-			d·x : ?term
-			1 < d , d < ? , ? = d·x : ?bool
-			1 < d < ? ∧ ? = d·x : ?bool
-		∃d,x∈ℕ ( 1 < d < ? ∧ ? = d·x ) : ?bool
-		¬∃d,x∈ℕ ( 1 < d < ? ∧ ? = d·x ) : ?bool
-		? > k ∧ ¬∃d,x∈ℕ ( 1 < d < ? ∧ ? = d·x ) : ?bool
+Given x∈S:
+	Given x∈T:  [forbidden!]
+		Q(x) : bool
+	∃x∈T ( Q(x) ) : bool
+∀x∈S ( ∃x∈T ( Q(x) ) ) : bool
+```
+
+**Example 2**
+
+```
+
+Given k∈ℕ:
+	?,k : ?term
+	? > k : ?bool
+	Given d,x∈ℕ:
+		1,d,? : ?term
+		d·x : ?term
+		1 < d , d < ? , ? = d·x : ?bool
+		1 < d < ? ∧ ? = d·x : ?bool
+	∃d,x∈ℕ ( 1 < d < ? ∧ ? = d·x ) : ?bool
+	¬∃d,x∈ℕ ( 1 < d < ? ∧ ? = d·x ) : ?bool
+	? > k ∧ ¬∃d,x∈ℕ ( 1 < d < ? ∧ ? = d·x ) : ?bool
 ```
 
 **Useful short-forms**
@@ -111,9 +114,9 @@ Example 2:
 
 ```
 "Given x∈S such that Q(x):", expands to:
-	Given x∈S:
-		If Q(x):
-			...
+Given x∈S:
+	If Q(x):
+		...
 ```
 
 ## Axioms
@@ -123,7 +126,7 @@ Notice that the (dedekind-)completeness axiom is the only axiom that goes beyond
 It's really up to you how descriptive you want your labels to be. I hope you recognize most of these labels. Long forms include "irreflexive" and "trichotomy" and "transitivity". And "+ over <" intuitively stands for "when + 'distributes' over <".
 	
 
-Division axiom
+**Division axiom**
 
 Conventionally, ordered fields are axiomatized without the division operation, and with the axiom "∀x∈ℚ ( x≠0 ⇒ ∃y∈ℚ ( x·y=1 ) )" instead of this axiom. But with the conventional axiomatization, division is definable because we can define the type ℝ[≠0] = { x : x∈ℝ ∧ x≠0 } and use the theorem ∀x∈ℝ ∀y∈ℝ[≠0] !∃z∈ℝ ( x = y·z ) and apply the symbol-defining rule to get ∀x∈ℝ ∀y∈ℝ[≠0] ( x = y·(x/y) ).
 And conversely, with our axiomatization, we can prove ∀x∈ℚ ( x≠0 ⇒ ∃y∈ℚ ( x·y=1 ) ). So both alternatives are essentially equivalent. The advantage of our axiomatization is that it is much easier to use (because it has no ∃-quantifiers). The advantage of the conventional one is that it does not require quantifiers over different types (because we don't have a division-by-zero issue).
@@ -133,7 +136,7 @@ Notes:
 		Before that, let us define division / for ℝ×ℝ[≠0] via this mechanism just as we did with subtraction and negation, for convenience. That is, we can define the type ℝ[≠0] = { x : x∈ℝ ∧ x≠0 } and use the theorem ∀x∈ℝ ∀y∈ℝ[≠0] ∃z∈ℝ ( x = y·z ), which you can prove from the field axioms, and apply the rule to get ∀x∈ℝ ∀y∈ℝ[≠0] ( x = y·(x/y) ).
 		Define the binary operation division / :  ℝ×ℝ[≠0] → ℝ via ∀x∈ℝ ∀y∈ℝ[≠0] ( x = y·(x/y) ).
 
-Dedekind-completeness axiom
+**Dedekind-completeness axiom**
 
 The axioms for ℝ are same as the axioms for ℚ (change every "ℚ" to "ℝ") except that the last two are ∀x∈ℚ ( x∈ℝ ) and the dedekind-completeness axiom: 
 ∀S⊆ℝ ( ∃u∈ℝ ∀x∈S ( x≤u ) ⇒ ∃m∈ℝ ( ∀x∈S ( x≤m ) ∧ ∀u∈ℝ ( ∀x∈S ( x≤u ) ⇒ m≤u ) ) ). 
@@ -142,7 +145,7 @@ If you abuse notation a bit and write "S≤u" to mean "∀x∈S ( x≤u )" where
 Which says "every subset of ℝ with an upper bound has a minimum upper bound". 
 Of course, "S⊆ℝ" means "S∈P(ℝ)" where "P" here is the power-set operation.
 
-Rings and semiring axioms
+**Rings and semiring axioms**
 
 "Semiring" stands for "half a ring", because it is only on one side (positive side).
 Semiring axioms:
