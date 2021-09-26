@@ -66,40 +66,6 @@ Given x,y,z ∈ ℕ:
 			(x+y)+z : term
 ```
 
-
-## Syntax properties
-
-```
-Given x∈S:
-	Given y ∈ S:
-		Given z ∈ S:
-			y : term  [since x is a used variable]
-			? : ?term
-			? = y : ?bool
-```
-
-Here "?term" is used to indicate that it is a term that may have blanks, and same for "?bool". The rules for "?term" and "?bool" are identical to the rules for sentences except that you change every ": term" and every ": bool" to ": ?term" and ": ?bool" respectively, and you add:*
-	? : ?term
-Then a property is exactly all those things that you can deduce in front of ": ?bool".
-
-**Example**
-
-```
-Given k∈ℕ:
-	?,k : ?term
-	? > k : ?bool
-	Given d∈ℕ:
-		Given x∈ℕ:
-			1,d,? : ?term
-			d·x : ?term
-			1 < d , d < ? , ? = d·x : ?bool
-			1 < d < ? ∧ ? = d·x : ?bool
-		∃x∈ℕ ( 1 < d < ? ∧ ? = d·x ) : ?bool
-	∃d∈ℕ ∃x∈ℕ ( 1 < d < ? ∧ ? = d·x ) : ?bool
-	¬∃d∈ℕ ∃x∈ℕ ( 1 < d < ? ∧ ? = d·x ) : ?bool
-	? > k ∧ ¬∃d∈ℕ ∃x∈ℕ ( 1 < d < ? ∧ ? = d·x ) : ?bool
-```
-
 **Useful short-forms**
 	
 
