@@ -1,21 +1,37 @@
-[Induction] For any property P on ℕ, P(0) ∧ ∀ k ∈ ℕ ( P(k) ⇒ P(k+1) ) ⇒ ∀ k ∈ ℕ ( P(k) )
-[Strong induction] For any property P on ℕ, ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) ).
-[Well-ordering] For any property P on ℕ, ∃k∈ℕ ( P(k) ) ⇒ ∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) ).
 For any property P on ℕ, we can prove:
-	P(0) ∧ ∀ k ∈ ℕ ( P(k) ⇒ P(k+1) ) ⇒ ∀ k ∈ ℕ ( P(k) )
-	If ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ):
+	Define Q(k) ≡ ∀i∈ℕ ( i<k ⇒ P(i) )
+	If ∀ k ∈ ℕ ( Q(k) ⇒ P(k) ):
+		[Show ∀ k ∈ ℕ ( Q(k) ) with induction]
+		Given i ∈ ℕ:
+			If i < 0:
+				⊥
+				P(i)
+		∀i∈ℕ ( i<0 ⇒ P(i) )
+		Q(0)
 		Given k ∈ ℕ:
-			∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k)
-			...
-		∀k∈ℕ ( P(k) ).
-	∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) ).
+			If Q(k):
+				[Show ∀i∈ℕ ( i<k+1 ⇒ P(i) )]
+				Given i ∈ ℕ:
+					If i<k+1:
+						i+1 ≤ k+1 [discreteness]
+						i ≤ k [cancellation]
+						If i < k:
+							∀i∈ℕ ( i<k ⇒ P(i) )
+							i<k ⇒ P(i)
+							P(i)
+						If i = k:
+							Q(k) ⇒ P(k)
+							P(k)
+							P(i)
+						P(i)
+				Q(k+1)
+		∀ k ∈ ℕ ( Q(k) ⇒ Q(k+1) )
+		Q(0) ∧ ∀ k ∈ ℕ ( Q(k) ⇒ Q(k+1) )
+		∀ k ∈ ℕ ( Q(k) ) 
+		Given k ∈ ℕ:
+			Q(k) ⇒ P(k)
+			Q(k)
+			P(k)
+		∀ k ∈ ℕ ( P(k) )
+	∀ k ∈ ℕ ( Q(k) ⇒ P(k) ) ⇒ ∀ k ∈ ℕ ( P(k) )
 For any property P on ℕ, ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ) ⇒ ∀k∈ℕ ( P(k) ). [Strong induction]
-Notes:
-	Convince yourself that ∀k∈ℕ ( P(k) ) is true given ∀k∈ℕ ( ∀i∈ℕ ( i<k ⇒ P(i) ) ⇒ P(k) ).
-	P(0) 
-	P(1) from P(0) ⇒ P(1) 
-	P(2) from P(0) ∧ P(1) ⇒ P(2) 
-	P(3) from P(0) ∧ P(1) ∧ P(2) ⇒ P(3) 
-	P(4) from P(0) ∧ P(1) ∧ P(2) ∧ P(3) ⇒ P(4)
-	
-	I get P(0). Then, from P(0) and P(0) ⇒ P(1) I get P(1). So, from P(0) ∧ P(1) and P(0) ∧ P(1) ⇒ P(2), I get P(2). From P(0) ∧ P(1) ∧ P(2) and P(0) ∧ P(1) ∧ P(2) ⇒ P(3), I get P(3). And from P(0) ∧ P(1) ∧ P(2) ∧ P(3) and P(0) ∧ P(1) ∧ P(2) ∧ P(3) ⇒ P(4), I get P(4).
