@@ -66,10 +66,26 @@ Given x,y,z ∈ ℕ:
 
 Of course, please don't concern yourself now with the actual syntax of binary operations, whether infix or prefix. We do not want to have to write "+(+(x,y),z)" just to make it fit the above rules completely!
 Just understand the structural idea.
-The above rules suffice for plain FOL. For my version of many-sorted FOL, we just need one more:
+
+[[The above rules suffice for plain FOL. For my version of many-sorted FOL, we just need one more:
 ( Given x∈S ⊢ x∈S : bool ).
 You also need syntax rules for equality:
+t,u : term ⊢ t=u : bool]]
+
+A : bool ⊢ ¬A : bool
+A,B : bool ⊢ A∧B : bool
+A,B : bool ⊢ A∨B : bool
+A,B : bool ⊢ A⇒B : bool
+A,B : bool ⊢ A⇔B : bool
+Given x∈S ⊢ x∈S : bool
+( Given x∈S ⊢ A : bool ) ⊢ ∀x∈S ( A ) : bool
+( Given x∈S ⊢ A : bool ) ⊢ ∃x∈S ( A ) : bool
+[v is a used variable] ⊢ v : term
 t,u : term ⊢ t=u : bool
+t[1],...,t[k] : term ; [f is a k-input function-symbol] ⊢ f(t[1],...,t[k]) : term
+t[1],...,t[k] : term ; [Q is a k-input predicate-symbol] ⊢ Q(t[1],...,t[k]) : bool
+
+
 
 ## Syntax properties
 
