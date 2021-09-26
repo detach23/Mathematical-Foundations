@@ -148,7 +148,9 @@ Of course, "S⊆ℝ" means "S∈P(ℝ)" where "P" here is the power-set operatio
 **Rings and semiring axioms**
 
 "Semiring" stands for "half a ring", because it is only on one side (positive side).
-Semiring axioms:
+
+**Semiring axioms**
+
 	- closure
 	- commute
 	- assoc
@@ -156,18 +158,26 @@ Semiring axioms:
 	- ident rules
 	- [+diff]
 	- [0<1]. 
-		Ordered semiring axioms:
+
+**Ordered semiring axioms**
 		add the axioms governing <. 
 		Discrete ordered semiring axioms:
 		add [discrete].
-		Ring axioms:
-		the semiring axioms but with [+diff] replaced by existence of additive inverse. All you need technically is the negation operation, but for convenience we added both subtraction and negation. So to get the ring axioms you start from the semiring axioms and replace [+diff] by the axioms governing −. 
-		Ordered ring axioms:
-		add the axioms governing <. 
-		Ordered field axioms:
-		add the axioms governing "/".
-		ℚ and ℝ are ordered fields (i.e. they satisfy the ordered field axioms).
-		Triage:
+
+**Ring axioms**
+
+The semiring axioms but with [+diff] replaced by existence of additive inverse. All you need technically is the negation operation, but for convenience we added both subtraction and negation. So to get the ring axioms you start from the semiring axioms and replace [+diff] by the axioms governing −. 
+
+**Ordered ring axioms**		
+
+add the axioms governing <. 
+Ordered field axioms:
+add the axioms governing "/".
+ℚ and ℝ are ordered fields (i.e. they satisfy the ordered field axioms).
+
+
+
+Triage:
 		Note that the "⊢" used in a rule means something slightly different from when used to state theorems.
 		There is no ambiguity because for theorem statements "S ⊢ Q" has a system S, whereas for rules "X;...;Y ⊢ Z;...;W" the stuff on the left are either statements or conditions or proof structure.
 		Symbol-defining rule:
