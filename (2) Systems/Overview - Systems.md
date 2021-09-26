@@ -65,8 +65,8 @@ Given x,y,z ∈ ℕ:
 			(x+y)+z : term
 ```
 
-In each subcontext, a property is simply a (boolean) statement (in that context) except with one or more terms replaced by blanks. Each blank is to be filled with a particular 'input'. For example, we might have a 1-input property Q = "[1] > k ∧ ¬∃d∈ℕ ∃x∈ℕ ( 1 < d < [1] ∧ [1] = d·x )" where each "[1]" denotes a blank for the 1st input to Q, in which case "Q(t)" denotes "t > k ∧ ¬∃d∈ℕ ∃x∈ℕ ( 1 < d < t ∧ t = d·x )".
-For another example, we might have a 2-input property R = "[1] < [2] ∨ [1] = [2]" where each "[i]" denotes a blank for the i-th input to R, in which case "R(m,n)" denotes "m < n ∨ m = n".
+In each subcontext, a property is simply a (boolean) statement (in that context) except with one or more terms replaced by blanks. Each blank is to be filled with a particular 'parameter'. For example, we might have a 1-parameter property Q = "[1] > k ∧ ¬∃d∈ℕ ∃x∈ℕ ( 1 < d < [1] ∧ [1] = d·x )" where each "[1]" denotes a blank for the 1st parameter to Q, in which case "Q(t)" denotes "t > k ∧ ¬∃d∈ℕ ∃x∈ℕ ( 1 < d < t ∧ t = d·x )".
+For another example, we might have a 2-parameter property R = "[1] < [2] ∨ [1] = [2]" where each "[i]" denotes a blank for the i-th parameter to R, in which case "R(m,n)" denotes "m < n ∨ m = n".
 
 **Useful short-forms**
 	
