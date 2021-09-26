@@ -38,18 +38,18 @@ Here a rule of the form "... ⊢ ..." means from the left-hand stuff you can ded
 
 ```
 Given x∈S:
-		Q(x) : bool
-	∀x∈S ( Q(x) ) : bool
+	Q(x) : bool
+∀x∈S ( Q(x) ) : bool
 ```
 
 All these deductions should never be written out explicitly, but it should be how you think of the syntax rules if you want to be precise. Note that the ∀sub rule ensures you cannot have nested quantification of the same variable. For example you cannot do:
 
 ```
-	Given x∈S:
-		Given x∈T:  [forbidden!]
-			Q(x) : bool
-			∃x∈T ( Q(x) ) : bool
-	∀x∈S ( ∃x∈T ( Q(x) ) ) : bool
+Given x∈S:
+	Given x∈T:  [forbidden!]
+		Q(x) : bool
+	∃x∈T ( Q(x) ) : bool
+∀x∈S ( ∃x∈T ( Q(x) ) ) : bool
 ```
 
 I've also included the recursive definition of terms in the above rules, just to let you see how one can think of them. For instance, if we have the binary operation + we can actually do the following deduction:
@@ -57,9 +57,9 @@ I've also included the recursive definition of terms in the above rules, just to
 
 ```
 Given x,y,z∈ℕ:
-		x,y,z : term
-		x+y : term
-		(x+y)+z : term
+	x,y,z : term
+	x+y : term
+	(x+y)+z : term
 ```
 
 Of course, please don't concern yourself now with the actual syntax of binary operations, whether infix or prefix. We do not want to have to write "+(+(x,y),z)" just to make it fit the above rules completely!
@@ -82,17 +82,7 @@ Here "?term" is used to indicate that it is a term that may have blanks, and sam
 	? : ?term
 Then a property is exactly all those things that you can deduce in front of ": ?bool".
 
-**Example 1**
-
-```
-Given x∈S:
-	Given x∈T:  [forbidden!]
-		Q(x) : bool
-	∃x∈T ( Q(x) ) : bool
-∀x∈S ( ∃x∈T ( Q(x) ) ) : bool
-```
-
-**Example 2**
+**Example**
 
 ```
 
