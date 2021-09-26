@@ -56,10 +56,12 @@ I've also included the recursive definition of terms in the above rules, just to
 	
 
 ```
-Given x,y,z∈ℕ:
-	x,y,z : term
-	x+y : term
-	(x+y)+z : term
+Given x,y,z ∈ ℕ:
+	Given y ∈ ℕ:
+		Given z ∈ ℕ:
+			x,y,z : term
+			x+y : term
+			(x+y)+z : term
 ```
 
 Of course, please don't concern yourself now with the actual syntax of binary operations, whether infix or prefix. We do not want to have to write "+(+(x,y),z)" just to make it fit the above rules completely!
