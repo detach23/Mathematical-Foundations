@@ -4,7 +4,7 @@
 ## Syntax
 ### Syntax rules
 
-Notation:
+**Notation**
 
 ```
 ( Given x∈S ⊢ A : bool ) ⊢ ∀x∈S ( A ) : bool
@@ -55,7 +55,6 @@ Given x∈S:
 ```
 
 I've also included the recursive definition of terms in the above rules, just to let you see how one can think of them. For instance, if we have the binary operation + we can actually do the following deduction:
-	
 
 ```
 Given x,y,z ∈ ℕ:
@@ -66,11 +65,13 @@ Given x,y,z ∈ ℕ:
 			(x+y)+z : term
 ```
 
+In each subcontext, a property is simply a (boolean) statement (in that context) except with one or more terms replaced by blanks. Each blank is to be filled with a particular 'input'. For example, we might have a 1-input property Q = "[1] > k ∧ ¬∃d∈ℕ ∃x∈ℕ ( 1 < d < [1] ∧ [1] = d·x )" where each "[1]" denotes a blank for the 1st input to Q, in which case "Q(t)" denotes "t > k ∧ ¬∃d∈ℕ ∃x∈ℕ ( 1 < d < t ∧ t = d·x )".
+For another example, we might have a 2-input property R = "[1] < [2] ∨ [1] = [2]" where each "[i]" denotes a blank for the i-th input to R, in which case "R(m,n)" denotes "m < n ∨ m = n".
+
 **Useful short-forms**
 	
-
-```
 "Given x∈S such that Q(x):", expands to:
+```
 Given x∈S:
 	If Q(x):
 		...
@@ -82,7 +83,6 @@ The axioms I have given you for ℚ minus "∀x∈ℚ ∃p,q∈ℤ ( q ≠ 0 ∧
 Notice that the (dedekind-)completeness axiom is the only axiom that goes beyond the structures involved. The others are all about ℕ,ℤ,ℚ,ℝ, so what you can prove from them don't involve set theory, since you can treat ℕ,ℤ,ℚ,ℝ as mere types. However, the completeness axiom involves set theory because it is useless without any axioms that allow you to prove existence of members of P(ℝ).
 It's really up to you how descriptive you want your labels to be. I hope you recognize most of these labels. Long forms include "irreflexive" and "trichotomy" and "transitivity". And "+ over <" intuitively stands for "when + 'distributes' over <".
 	
-
 **Division axiom**
 
 Conventionally, ordered fields are axiomatized without the division operation, and with the axiom "∀x∈ℚ ( x≠0 ⇒ ∃y∈ℚ ( x·y=1 ) )" instead of this axiom. But with the conventional axiomatization, division is definable because we can define the type ℝ[≠0] = { x : x∈ℝ ∧ x≠0 } and use the theorem ∀x∈ℝ ∀y∈ℝ[≠0] !∃z∈ℝ ( x = y·z ) and apply the symbol-defining rule to get ∀x∈ℝ ∀y∈ℝ[≠0] ( x = y·(x/y) ).
