@@ -6,11 +6,7 @@ For any property P on ℕ, we can prove:
 		Let m ∈ ℕ such that P(m)
 		...
 		P(m)
-		Given k ∈ ℕ:
-			If P(k):
-				If k < m:
-					
-				k ≥ m
+		...
 		∀k∈ℕ ( P(k) ⇒ k≥m ) 
 		P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) 
 		∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) )
