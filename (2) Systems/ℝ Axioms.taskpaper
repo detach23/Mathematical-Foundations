@@ -1,4 +1,4 @@
-Add the type ℝ, ℝ[≠0] = { x : x∈ℝ ∧ x≠0 }, reuse the symbols and operations of PA, the unary operation −  and the binary operation / (ℝ is an ordered field containing ℚ).
+Add the type ℝ, ℝ ∈ set, ℝ[≠0] = { x : x∈ℝ ∧ x≠0 }, reuse the symbols and operations of PA, the unary operation −  and the binary operation / (ℝ is an ordered field containing ℚ).
 [closure] ∀x,y∈ℝ (x+y∈ℝ). 
 [closure] ∀x,y∈ℝ (x⋅y∈ℝ). 
 [closure] ∀x,y∈ℝ (x-y∈ℝ). 
