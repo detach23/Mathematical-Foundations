@@ -1,4 +1,4 @@
-Add the type ℤ, reuse the symbols and operations of PA, add the unary operation – and the binary operation – (ℤ is an ordered ring containing ℕ).
+Add the type ℤ, ℤ ∈ set, reuse the symbols and operations of PA, add the unary operation – and the binary operation – (ℤ is an ordered ring containing ℕ).
 [closure] ∀x,y∈ℤ (x+y∈ℤ). 
 [closure] ∀x,y∈ℤ (x⋅y∈ℤ). 
 [closure] ∀x,y∈ℤ (x–y∈ℤ). 
