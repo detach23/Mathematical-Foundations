@@ -20,4 +20,4 @@ Add the type ℝ, ℝ ∈ set, ℝ[≠0] = { x : x∈ℝ ∧ x≠0 }, reuse the 
 [order] 0<1.
 [ℚ ⊆ ℝ] ∀x∈ℚ ( x∈ℝ )
 [field] ∀x∈ℝ ∀y∈ℝ[≠0] ( x = y·(x/y) )
-[complete] ∀S⊆ℝ ( ∃u∈ℝ ∀x∈S ( x≤u ) ⇒ ∃m∈ℝ ( ∀x∈S ( x≤m ) ∧ ∀u∈ℝ ( ∀x∈S ( x≤u ) ⇒ m≤u ) ) )
+[complete] ∀S⊆ℝ ( S≠∅ ∧ ∃u∈ℝ ∀x∈S ( x≤u ) ⇒ ∃m∈ℝ ( ∀x∈S ( x≤m ) ∧ ∀u∈ℝ ( ∀x∈S ( x≤u ) ⇒ m≤u ) ) ).
