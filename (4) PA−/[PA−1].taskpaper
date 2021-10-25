@@ -1,32 +1,63 @@
 Given k,m ∈ ℕ:
-  If k < m:
-    ∀ k,m ∈ ℕ ( k < m ⇒ k + 1 ≤ m ) [lemma]
-      Given k,m ∈ ℕ:
-        If k < m:
-          ∃ z ∈ ℕ ( k + z = m )
-          Let z' ∈ ℕ such that k + z' = m
-          k + z' = m
-          0 = z' ⋁ 1 = z' v 1 < z'
-          If 0 = z':
-            k = m
-            m < m
-            ¬m < m
-            ⊥ 
-            k + 1 < m ⋁ k + 1 = m
-          If 1 = z':
-            k + 1 = m
-            k + 1 < m ⋁ k + 1 = m
-          If 1 < z':
-            k + 1 < k + z'
-            k + 1 < m
-            k + 1 < m ⋁ k + 1 = m
-          k + 1 < m ⋁ k + 1 = m
-      ∀ k,m ∈ ℕ ( k < m ⇒ k + 1 ≤ m)
-    k + 1 ≤ m
-    ( k + 1 ) + ( k + 1 ) ≤ m + (k + 1)
-    m + (k + 1) ≤ m + m
-    ( k + 1 ) + ( k + 1 ) ≤ m + m
-    k * 2 + 2 ≤ m * 2
-    k * 1 + 1 ≤ k * 2 + 2 ≤ m * 2
-    k * 1 + 1 ≤ m * 2
+	If k < m:
+		∀ k,m ∈ ℕ ( k < m ⇒ k + 1 ≤ m ) [lemma]
+			Given k,m ∈ ℕ:
+				If k < m:
+					∃ z ∈ ℕ ( k + z = m )
+					Let z' ∈ ℕ such that k + z' = m
+					k + z' = m
+					0 = z' ⋁ 1 = z' v 1 < z'
+					If 0 = z':
+						k = m
+						m < m
+						¬m < m
+						⊥ 
+						k + 1 < m ⋁ k + 1 = m
+					If 1 = z':
+						k + 1 = m
+						k + 1 < m ⋁ k + 1 = m
+					If 1 < z':
+						k + 1 < k + z'
+						k + 1 < m
+						k + 1 < m ⋁ k + 1 = m
+					k + 1 < m ⋁ k + 1 = m
+			∀ k,m ∈ ℕ ( k < m ⇒ k + 1 ≤ m)
+		k + 1 ≤ m
+		( k + 1 ) + ( k + 1 ) ≤ m + (k + 1)
+		m + (k + 1) ≤ m + m
+		( k + 1 ) + ( k + 1 ) ≤ m + m
+		k * 2 + 2 ≤ m * 2
+		k * 1 + 1 ≤ k * 2 + 2 ≤ m * 2
+		k * 1 + 1 ≤ m * 2
 ∀ k,m ∈ ℕ ( k < m ⇒ k * 2 + 1 < m * 2 )
+Given k ∈ ℕ:
+	If k < m:
+		∃z ∈ ℕ ( k+z = m )
+		k+z' = m
+		If 0 = z':
+			k = m
+			m < m
+			⊥
+		If 1 = z':
+			k+1 = m
+			k+1 ≤ m
+		If 1 < z':
+			k+1 < k+z'
+			k+1 < m
+			k+1 ≤ m
+		k+1 ≤ m
+∀ k,m ∈ ℕ ( k < m ⇒ k+1 ≤ m)
+Given k ∈ ℕ:
+	If k < m:
+		k+1 ≤ m
+		If k+1 < m:
+			(k+1)·2 < m·2
+			k·2 + 2 < m·2
+			k·2+1 < k·2 + 2 < m·2
+			k·2+1 < m·2
+		If k+1 = m:
+			2·(k+1) = 2·m
+			2·k +1 < 2·k+2
+			2·k +1 < m·2
+		k·2 + 1 < m·2
+∀ k,m ∈ ℕ ( k < m ⇒ k·2 + 1 < m·2 )
