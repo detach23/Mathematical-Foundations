@@ -1,4 +1,4 @@
-∀ k,m ∈ ℕ ( k < m ⇒ k + 1 ≤ m ) [lemma]
+∀ k,m ∈ ℕ ( k < m ⇒ k + 1 ≤ m ) [discreteness]
 If ∃x,y,z∈ℕ ( 1<x<y<z<4 ):
   Let a,b,c ∈ ℕ such that 1<a<b<c<4
   2 ≤ a

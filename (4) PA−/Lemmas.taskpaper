@@ -7,6 +7,7 @@ Contents:
 	∀x,y,z∈ℕ ( x ≤ y ⇒ x + z ≤ y + z ) [lemma]
 	∀ x, y, z ∈ ℕ ( x ≤ y ⇒ x · z ≤ y · z ) [lemma]
 	∀x,y∈ℕ ( x≤y ⇒ ∃z∈ℕ ( x+z = y ) ) [lemma]
+	∀ k,m ∈ ℕ ( k < m ⇒ k+1 ≤ m) [discreteness]
 	
 ∀ x, y, z ∈ ℕ ( x + y = x + z ⇒ y = z ) [lemma]
 	Given x ∈ ℕ:
@@ -91,3 +92,21 @@ Contents:
 				∃z∈ℕ ( x+z = y )
 			∃z∈ℕ ( x+z = y )
 	∀x,y∈ℕ ( x≤y ⇒ ∃z∈ℕ ( x+z = y ) )
+∀k,m ∈ ℕ ( k < m ⇒ k+1 ≤ m) [discreteness]
+	Given k ∈ ℕ:
+		If k < m:
+			∃z ∈ ℕ ( k+z = m )
+			k+z' = m
+			If 0 = z':
+				k = m
+				m < m
+				⊥
+			If 1 = z':
+				k+1 = m
+				k+1 ≤ m
+			If 1 < z':
+				k+1 < k+z'
+				k+1 < m
+				k+1 ≤ m
+			k+1 ≤ m
+	∀ k,m ∈ ℕ ( k < m ⇒ k+1 ≤ m)
