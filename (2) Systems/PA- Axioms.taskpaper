@@ -1,4 +1,4 @@
-Add the type ℕ and the symbols of PA, namely the constant-symbols 0,1 and the 2-input function-symbols +,· and the 2-input predicate-symbol < (ℕ is a discrete ordered semiring).
+Add the type ℕ and the symbols of PA, namely the constant-symbols 0,1 and the 2-input function-symbols +,· and the 2-input predicate-symbol < (ℕ is a discrete ordered semiring). "t > u" is defined to eman "u < t" and "t ≤ u" is defined to mean "t < u ∨ t = u".
 [closure] ∀x,y∈ℕ (x+y∈ℕ). 
 [closure] ∀x,y∈ℕ (x⋅y∈ℕ). 
 [ring] ∀x,y∈ℕ (x+y=y+x). 
