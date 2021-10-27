@@ -4,17 +4,24 @@
 Prove Well-ordering from Strong induction:
 	For any property P on ℕ, we can prove:
 		If ∃k∈ℕ ( P(k) ):
-			Let m ∈ ℕ such that P(m)
+			Let a ∈ ℕ such that P(a)
 			If ¬∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) ):
 				∀m∈ℕ ( P(m) ⇒ ∃k∈ℕ ( P(k) ∧ k<m ) )
-				P(m) ⇒ ∃k∈ℕ ( P(k) ∧ k<m )
-				∃k∈ℕ ( P(k) ∧ k<m )
-				...
+				Given k' ∈ ℕ:
+					If ∀i∈ℕ ( i<k' ⇒ ¬P(i) ):
+						If P(k'):
+							P(k') ⇒ ∃k∈ℕ ( P(k) ∧ k<k' )
+							∃k∈ℕ ( P(k) ∧ k<k' )
+							Let b ∈ ℕ such that P(b) ∧ b<k'
+							b<k' ⇒ ¬P(b)
+							¬P(b)
+							⊥
+						¬P(k')
+				∀k'∈ℕ ( ∀i∈ℕ ( i<k' ⇒ ¬P(i) ) ⇒ ¬P(k') ) 
+				∀k'∈ℕ ( ∀i∈ℕ ( i<k' ⇒ ¬P(i) ) ⇒ ¬P(k') ) ⇒ ∀k'∈ℕ ( ¬P(k') ) [Strong induction]
+				∀k'∈ℕ ( ¬P(k') )
+				¬P(a)
+				P(a)
+				⊥
 			∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) )
-	For any property P on ℕ, ∃k∈ℕ ( P(k) ) ⇒ ∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) ). [Well-ordering]
-Notes: 
-	Um you used "m" in a quantifier after you have declared it in an ∃elim. That is invalid. If you fix that, then you have shown that from P(m) for some m∈ℕ you can get P(k) for some k < m. But you're not going to get anywhere with that because you're back in the same situation as before. To get anywhere you have to try small cases...
-	And then based on the reasoning for small cases you can figure out what property Q to use strong induction on.
-	
-	No. You simply cannot conclude that what you wrote is a boolean statement, because you can't create a ∀subcontext using a used variable!
-	So you can't use the syntax rule ( ( Given x∈S ⊢ A : bool ) ⊢ ∃x∈S ( A ) : bool ) to get what you want because the ∀subcontext you would need is blocked by the condition on ∀sub.
+	For any property P on ℕ, we can prove ∃k∈ℕ ( P(k) ) ⇒ ∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) ). [Well-ordering]
