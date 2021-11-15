@@ -1,109 +1,71 @@
+Notes:
+	It is not hard to prove (PA3) using strong induction or well-ordering. I'll let you figure out how to use strong induction yourself. For the proof that uses well-ordering, notice that well-ordering gives you ∀k∈ℕ ( k > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | k ∧ ∀q∈ℕ ( 1 < q ∧ q | k ⇒ q ≥ p ) ) ), so you would have to get from "∀q∈ℕ ( 1 < q ∧ q | k ⇒ q ≥ p )" to "¬∃q∈ℕ ( 1 < q < p ∧ q | p )", which is easy using a lemma that | is transitive.
+Lemma: 
+	Prove ∀ x,y,z ( x | y ∧ y | z ⇒ x | z )
+	(infix) | : ℕ^2→Bool is defined via ∀x,y∈ℕ ( x | y ⇔ ∃d∈ℕ ( y = x · d ) )
+	Given x,y,z ∈ ℕ:
+		If x | y ∧ y | z:
+			∃ d ∈ ℕ ( y = x · d )
+			∃ d ∈ ℕ ( z = y · d )
+			Let a ∈ ℕ such that y = x · a
+			Let b ∈ ℕ such that z = y · b
+			z = (x · a) · b
+			z = x · ( a · b )
+			∃ d ∈ ℕ ( z = x · d )
+			x | z
+	∀ x,y,z ( x | y ∧ y | z ⇒ x | z )
 ∀k∈ℕ ( k > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | k ∧ ¬∃q∈ℕ ( 1 < q < p ∧ q | p ) ), where "1 < q < p" is short-hand for "1 < q ∧ q < p". ["Every natural number (greater than 1) has (at least) one prime divisor"]
-Prove PA3 using Strong induction:
-	Lemma: 
-		Prove ∀ x,y,z ( x | y ∧ y | z ⇒ x | z )
-		(infix) | : ℕ^2→Bool is defined via ∀x,y∈ℕ ( x | y ⇔ ∃d∈ℕ ( y = x · d ) )
-		Given x,y,z ∈ ℕ:
-			If x | y ∧ y | z:
-				∃ d ∈ ℕ ( y = x · d )
-				∃ d ∈ ℕ ( z = y · d )
-				Let a ∈ ℕ such that y = x · a
-				Let b ∈ ℕ such that z = y · b
-				z = (x · a) · b
-				z = x · ( a · b )
-				∃ d ∈ ℕ ( z = x · d )
-				x | z
-		∀ x,y,z ( x | y ∧ y | z ⇒ x | z )
-	∀k∈ℕ ( k > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | k ∧ ¬∃q∈ℕ ( 1 < q < p ∧ q | p ) ), where "1 < q < p" is short-hand for "1 < q ∧ q < p".
-	"Every natural number (greater than 1) has (at least) one prime divisor"
-	Define P(n) ≡ ¬∃q∈ℕ ( 1 < q < n ∧ q | n ), for every n∈ℕ.
-	Define Q(n) ≡ n > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | n ∧ P(p) ), for every n∈ℕ.
+Prove PA3 using strong induction: @today
+	Prime(n) ≡ n > 1 ∧ ¬∃q∈ℕ ( 1 < q < n ∧ q | n ) 
+	Q(k) ≡ k > 1 ⇒ ∃p∈ℕ ( p | k ∧ Prime(p) )
 	Given k ∈ ℕ:
-		P(k) ⇔ ¬∃q∈ℕ ( 1 < q < k ∧ q | k )
-		Q(k) ⇔ n > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | n ∧ P(k) )
-		If ∀i∈ℕ ( i<k ⇒ Q(i) ):
-			[Prove Q(k) ]
+		If ∀i ∈ ℕ ( i < k ⇒ Q(i) ):
 			If k > 1:
-				[Prove ∃ p ∈ ℕ ( p > 1 ∧ p | k ∧ P(p) ) ]
-				P(k) ⋁ ¬P(k)
-				If P(k):
-					k > 1
-					k | k
-					P(k)
-					k > 1 ∧ k | k ∧ P(k)
-					∃ p ∈ ℕ ( p > 1 ∧ p | k ∧ P(p) )
-				If ¬P(k):
-					P(n) ≡ ¬∃q∈ℕ ( 1 < q < n ∧ q | n )
-					Q(n) ≡ n > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | n ∧ P(p) ) 
-					∃q∈ℕ ( 1 < q < k ∧ q | k )
-					Let q' ∈ ℕ such that 1 < q' < k ∧ q' | k
-					q' < k ⇒ Q(q')
-					q' < k
-					Q(q')
-					q' > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | q' ∧ P(p) )
-					q' > 1
-					∃p∈ℕ ( p > 1 ∧ p | q' ∧ P(p) )
-					Let p' ∈ ℕ such that p' > 1 ∧ p' | q' ∧ P(p')
-					∀ x,y,z ∈ ℕ ( x | y ∧ y | z ⇒ x | z ) [lemma]
-					p' | q' ∧ q' | k ⇒ p' | k
-					p' | q' ∧ q' | k
-					p' | k
-					p' > 1 ∧ p' | k ∧ P(p')
-					∃ p ∈ ℕ ( p > 1 ∧ p | k ∧ ¬∃ q ∈ ℕ ( 1 < q < p ∧ q | p ) )
-				∃ p ∈ ℕ ( p > 1 ∧ p | k ∧ ¬∃ q ∈ ℕ ( 1 < q < p ∧ q | p ) )
-			k > 1 ⇒ ∃ p ∈ ℕ ( p > 1 ∧ p | k ∧ ¬∃ q ∈ ℕ ( 1 < q < p ∧ q | p ) )
+				If Prime(k):
+					k | k ∧ Prime(k)
+					∃p∈ℕ ( p | k ∧ Prime(p) )
+				If ¬Prime(k):
+					∃q∈ℕ ( 1 < q < k ∧ q | k ) 
+					Let d ∈ ℕ such that 1 < d < k ∧ d | k
+					d < k ⇒ Q(d)
+					Q(d)
+					d > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | d ∧ Prime(p) )
+					∃p∈ℕ ( p > 1 ∧ p | d ∧ Prime(p) )
+					Let a ∈ ℕ such that a > 1 ∧ a | d ∧ Prime(a) 
+					a | d ∧ d | k
+					a | k
+					a | k ∧ Prime(a)
+					∃p∈ℕ ( p | k ∧ Prime(p) )
+				∃p∈ℕ ( p | k ∧ Prime(p) )
 			Q(k)
-		∀i∈ℕ ( i<k ⇒ Q(i) ) ⇒ Q(k)
-	∀k∈ℕ (∀i∈ℕ ( i<k ⇒ Q(i) ) ⇒ Q(k) )
-	∀k∈ℕ (∀i∈ℕ ( i<k ⇒ Q(i) ) ⇒ Q(k) ) ⇒ ∀ k ∈ ℕ ( Q(k) )
-	∀ k ∈ ℕ ( Q(k) )
+		∀k ∈ ℕ ( Q(k) ) [strong induction]
 	∀k∈ℕ ( k > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | k ∧ ¬∃q∈ℕ ( 1 < q < p ∧ q | p ) )
-	Notes:
-		It is not hard to prove (PA3) using strong induction or well-ordering. I'll let you figure out how to use strong induction yourself. For the proof that uses well-ordering, notice that well-ordering gives you ∀k∈ℕ ( k > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | k ∧ ∀q∈ℕ ( 1 < q ∧ q | k ⇒ q ≥ p ) ) ), so you would have to get from "∀q∈ℕ ( 1 < q ∧ q | k ⇒ q ≥ p )" to "¬∃q∈ℕ ( 1 < q < p ∧ q | p )", which is easy using a lemma that | is transitive.
-Prove PA3 using Well-ordering:
-	Approaches:
-		One is similar to the strong induction approach; if (PA3) is false then there is a counter-example, so by well-ordering there is a minimal counter-example, but that means that everything below it works, so the inner part of your above proof applies, yielding contradiction.
-		Your inner part shows that if the claim holds for everything less than k then it holds for k. The point is, if there is a counter-example in ℕ, then well-ordering generates a minimal counter-example, and then your inner part shows that it is impossible.
-	∀k∈ℕ ( k > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | k ∧ ¬∃q∈ℕ ( 1 < q < p ∧ q | p ) ), where "1 < q < p" is short-hand for "1 < q ∧ q < p".
-	"Every natural number (greater than 1) has (at least) one prime divisor"
-	Well-ordering: For any property P on ℕ, we have 
-		∃k∈ℕ ( P(k) ) ⇒ ∃m∈ℕ ( P(m) ∧ ∀k∈ℕ ( P(k) ⇒ k≥m ) ).
-		
-		Define P(p) ≡ ¬∃q∈ℕ ( 1 < q < p ∧ q | p ), for every p ∈ ℕ
-		Given k∈ℕ:
-			Define Q(d) ≡ d > 1 ∧ d | k, for each d∈ℕ.
-			If k > 1:
-				k > 1
-				k | k
-				∃ p ∈ ℕ ( Q(p) ).
-				∃ m ∈ ℕ ( Q(m) ∧ ∀ n ∈ ℕ ( Q(n) ⇒ n ≥ m ) )
-				Let m' ∈ ℕ such that Q(m') ∧ ∀ n ∈ ℕ ( Q(n) ⇒ n ≥ m' )
-				Q(m')
-				m' > 1 ∧ m' | k
-				∀ n ∈ ℕ ( Q(n) ⇒ n ≥ m' )
-				If ¬P(m'):
-					∃q∈ℕ ( 1 < q < m' ∧ q | m' )
-					Let q' ∈ ℕ such that 1 < q' < m' ∧ q' | m'
-					q' | m' ∧ m' | k ⇒ q' | k [lemma]
-					q' | m' ∧ m' | k
-					q' | k
-					q' > 1 ∧ q' | k
-					Q(q')
-					Q(q') ⇒ q' ≥ m'
-					q' ≥ m'
-					q' < m'
-					⊥
-				P(m')
-				Q(m')
-				Q(m') ∧ P(m')
-				m' > 1 ∧ m' | k ∧ P(m')
-				∃p∈ℕ ( p > 1 ∧ p | k ∧ ¬∃q∈ℕ ( 1 < q < p ∧ q | p )
-			k > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | k ∧ ¬∃q∈ℕ ( 1 < q < p ∧ q | p ) )
-		∀k∈ℕ ( k > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | k ∧ ¬∃q∈ℕ ( 1 < q < p ∧ q | p ) )
-Prove PA3 using strong induction V2:
+Prove PA3 using well-ordering: @today
+	Prime(n) ≡ n > 1 ∧ ¬∃q∈ℕ ( 1 < q < n ∧ q | n ) 
+	Q(k) ≡ k > 1 ⇒ ∃p∈ℕ ( p | k ∧ Prime(p) )
 	Given k ∈ ℕ:
 		If k > 1:
-			
-			∃p∈ℕ ( p > 1 ∧ p | k ∧ ¬∃q∈ℕ ( 1 < q < p ∧ q | p )
+			k > 1 ∧ k | k  
+			∃d ∈ ℕ ( d > 1 ∧ d | k )
+			Let m ∈ S such that m > 1 ∧ m | k ∧ ∀n ∈ ℕ ( n > 1 ∧ n | k ⇒ n ≥ m )
+			If Prime(m):
+				m | k ∧ Prime(m)
+				∃p∈ℕ ( p | k ∧ Prime(p) )
+			If ¬Prime(m):
+				m ≤ 1 ∨ ∃q∈ℕ ( 1 < q < m ∧ q | m ) 
+				If m ≤ 1:
+					⊥
+				If ∃q∈ℕ ( 1 < q < m ∧ q | m ):
+					Let b ∈ S such that 1 < b < m ∧ b | m
+					b | m ∧ m | k
+					b | k
+					b > 1 ∧ b | k
+					b ≥ m
+					b < m
+					⊥
+				⊥
+				∃p∈ℕ ( p | k ∧ Prime(p) )
+			∃p∈ℕ ( p | k ∧ Prime(p) )
+		Q(k)
+	∀k ∈ ℕ ( Q(k) )
 	∀k∈ℕ ( k > 1 ⇒ ∃p∈ℕ ( p > 1 ∧ p | k ∧ ¬∃q∈ℕ ( 1 < q < p ∧ q | p ) )
-Prove PA3 using well-ordering V2:
