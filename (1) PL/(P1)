@@ -1,0 +1,32 @@
+A or (B and C) iff ( A or B) and (A or C)
+(=>)
+	If A or (B and C):
+		If A:
+			A or B
+			A or C
+			(A or B) and (A or C)
+		If B and C:
+			B
+			A or B
+			C
+			A or C
+			(A or B) and (A or C)
+		(A or B) and (A or C)
+	A or (B and C) implies (A or B) and (A or C)
+(<=)
+	If (A or B) and (A or C):
+		A or B
+		A or C
+		If A:
+			A or (B and C)
+		If B:
+			If A:
+				A or (B and C)
+			A implies A or (B and C)
+			If C:
+				B and C
+				A or (B and C)
+			C implies A or (B and C)
+			A or (B and C)
+		A or (B and C)
+	If (A or B) and (A or C) implies A or (B and C)
