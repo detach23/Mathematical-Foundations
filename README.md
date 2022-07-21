@@ -10,6 +10,16 @@ What you are probably looking for (namely a practical way to rigorously check th
 
 We can axiomatizise ℕ,ℤ,ℚ,ℝ this way and it is non-trivial to actually construct ℤ,ℚ,ℝ in the base system (PA plus Set Theory) and extend the operations on ℕ to them in the manner that satisfies the axiomatizations here.
 
+## PL
+
+- (P1) A or ( B and C ) iff ( A or B ) and ( A or C ).
+- (P2) ( A or B ) and ( B or C ) and ( C or A ) implies ( A and B ) or ( B and C ) or ( C and A ).
+- (P3) ( A implies not B ) and B implies not A.
+- (P4) not ( A or B ) iff ( not A and not B ).
+- (P5) not ( A and B ) iff ( not A or not B ).
+- (P6) ( A implies B ) or ( B implies A ).
+- (P7) ( A implies B or C ) implies ( A implies B ) or ( A implies C ).
+
 ## FOL
 
 For (Q1) to (Q5), S is a type, and P is a property, and Q is a 2-parameter property (i.e. "Q(x,y)" is a statement about "x" and "y").
