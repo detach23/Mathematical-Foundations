@@ -1,0 +1,16 @@
+If ( A or B ) and not A:
+	( A or B ) and not A.
+	A or B.
+	not A.
+	If A:
+		A.
+		not A.
+		If not B:
+			A.
+			not A.
+		not not B.
+		B.
+	If B:
+		B.
+	B.
+( ( A or B ) and not A ) implies B.
