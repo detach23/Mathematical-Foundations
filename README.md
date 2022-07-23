@@ -1,16 +1,211 @@
-# First-Order-Logic
+# Mathematical Foundations
 
 ## Introduction
 
+We shall build a Fitch-style system that satisfies the following goal
+
+> That every sentence written is true in its context.
+
+Rules shall govern what we can write.
 Truth tables are not enough to capture first-order logic (with quantifiers), so we use inference rules instead. Each inference rule is chosen to be sound, meaning that if you start with true statements and use the rule you will deduce only true statements. We say that these rules are truth-preserving. If you choose carefully enough, you can make it so that the rules are not just truth-preserving but also allow you to deduce every (well-formed) statement that is necessarily true (in all situations).
 
 What you are probably looking for (namely a practical way to rigorously check the logical validity of your arguments) is natural deduction. There are many different styles, the most intuitive type being Fitch-style, which mark subcontexts using indentation or some related visual demarcation. The following system uses indentation and follows the intuition most closely in my opinion. 
+
+A proof is a finite sequence of lines that can be written according to the rules. A theorem is a sentence that can be written in some proof under no context-header.
+
+Next, suppose we are only dealing with boolean atomic propositions and propositions formed from them using "not" and "and" and "or" and "implies".
+So we will only write context-header "If A:" where "A" is a proposition formed as above.
+This system is now what is called classical propositional logic.
+And the semantics we had given to "not" and "and" and "or" and "implies" are exactly the semantics for classical propositional logic.
+
+## Contexts
+
+Every line is either a header or a statement. We shall put a colon after each header and a full-stop after each statement. Each header specifies some subcontext (contained by the current context), and the lines governed by that header is indicated by the indentation. The full context of each line is specified by all the headers that govern it (i.e. all the nearest headers above it at each lower indentation level). Each context-header, creates a subcontext within the one it is in.
+
+Note that what is stated in some context may be invalid in other contexts.
+
+The entire proof is in the outermost context, which you can imagine has no assumptions whatsoever, but really it does not matter.
+
+Basically, to ensure that we achieve our ultimate goal, it suffices to ensure that every rule we have is sound, namely if every sentence we wrote so far is true in its context then every sentence that the rule permits us to write is true in its context.
+
+## Syntax rules
+
+A statement must be an atomic (indivisible) proposition or a compound statement formed in the usual way using boolean operations or quantifiers, with the restriction that every variable that is bound by a quantifier is not already used to refer to some object in the current context, and that there are no nested quantifiers that bind the same variable.
+
+## Natural deduction rules
+
+Each inference rule is of the form:
+
+| X
+| ---
+| Y
+
+which means that if the last lines you have written match "X" then you can write "Y" immediately after that at the same level of indentation. Each application of an inference rule is also tied to the current context, namely the context of "X". We will not mention "current context" all the time.
+
+We can see that if every rule we use is sound, the whole proof will achieve the goal (only sentences that are true in their context). That is why we are so concerned with checking soundness of every rule.
+
+## Boolean operations
+
+**Restate:** If we prove something we can affirm it again in the same context.
+
+```
+| A
+| ...
+| ---
+| A.
+```
+
+Note that "..." denote any number of lines that are at least at the depicted indentation level. In the above rule, this means that all the lines written since the earlier writing of "A." must be in the same context (or some subcontext).
+
+Here is that subcontext-creation rule, which we can call if-sub (for conditional-subcontext):
+
+**⇒sub**:
+```
+|
+| -------
+| If A:
+|   A.
+```
+
+**restate:** If we prove something we can affirm it again in the same context.
+
+```
+| A
+| ...
+| ---
+| A.
+```
+
+**⇒restate:**  (We can create a conditional subcontext where A holds.).
+
+```
+| B.
+| ...
+| If A:
+|   ...
+| -----
+|   [B.]
+```
+
+**⇒intro:**
+
+```
+| If A:
+|   ...
+|   B.
+| -----
+| [A ⇒ B.]
+```
+
+**⇒elim:**
+
+```
+| A ⇒ B
+| A.
+| -----
+| B.
+```
+
+**∧intro:**
+
+```
+| A
+| B.
+| -----
+| A ∧ B.
+```
+
+**∧elim:**
+
+```
+| A ∧ B
+| -----
+| [A.]
+| [B.]
+```
+
+**∨intro:**
+
+```
+| A ∨ B
+| -----
+| [A ∨ B.]
+| [B ∨ A.]
+```
+
+**∨elim:**
+
+```
+| A ∨ B
+| A ⇒ C
+| B ⇒ C
+| -----
+| C.
+```
+
+**⊥intro:**
+
+```
+| A ⇒ ⊥
+| -----
+| ¬A.
+```
+
+**¬elim**
+
+```
+| A
+| ¬A
+| -----
+| ⊥.
+```
+
+**¬¬elim:**
+
+```
+| ¬¬A
+| -----
+| A.
+```
+
+Note that by using ¬intro and ¬¬elim we can get the following additional inference rule:
+
+```
+| ¬A ⇒ ⊥
+| ------
+| A.
+```
+
+which corresponds to how one would attempt to prove A by contradiction, namely to show that assuming ¬A implies a falsehood.
+
+**⇔intro:**
+
+```
+| A ⇒ B
+| B ⇒ A
+| -----
+| A ⇔ B
+```
+
+**⇔elim:**
+
+```
+| A ⇔ B
+| -----
+| [A ⇒ B]
+| [B ⇒ A]
+```
 
 ## Systems
 
 We can axiomatizise ℕ,ℤ,ℚ,ℝ this way and it is non-trivial to actually construct ℤ,ℚ,ℝ in the base system (PA plus Set Theory) and extend the operations on ℕ to them in the manner that satisfies the axiomatizations here.
 
 ## PL (Propositional Logic)
+
+### Preliminary exercises:
+
+- A ⇒ (B ⇒ A)
+- (P0) ((A ∨ B) ∧ ¬A) ⇒ ( ( A ∨ B ) and ¬A ) ⇒ B
 
 - (P1) A or ( B and C ) iff ( A or B ) and ( A or C ).
 - (P2) ( A or B ) and ( B or C ) and ( C or A ) implies ( A and B ) or ( B and C ) or ( C and A ).
