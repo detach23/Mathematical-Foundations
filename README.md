@@ -6,6 +6,8 @@ We shall build a Fitch-style system that satisfies the following goal
 
 > That every sentence written is true in its context.
 
+Why is that important? It means that any sentence that we can write without any context is then unconditionally true, and we call such sentences that we can write as a theorem.
+
 Rules shall govern what we can write.
 Truth tables are not enough to capture first-order logic (with quantifiers), so we use inference rules instead. Each inference rule is chosen to be sound, meaning that if you start with true statements and use the rule you will deduce only true statements. We say that these rules are truth-preserving. If you choose carefully enough, you can make it so that the rules are not just truth-preserving but also allow you to deduce every (well-formed) statement that is necessarily true (in all situations).
 
